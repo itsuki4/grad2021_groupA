@@ -13,7 +13,7 @@ import model.Shelter_Date;
 public class Shelter_DateDAO {
 	// データベース接続に使用する情報
 		  private final String JDBC_URL =
-		          "jdbc:mySQL://localhost/sample";
+		          "jdbc:mySQL://localhost/groupa";
 		  private final String DB_USER = "root";
 		  private final String DB_PASS = "";
 

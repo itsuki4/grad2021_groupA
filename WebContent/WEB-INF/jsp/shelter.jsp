@@ -14,7 +14,7 @@ List<Shelter> list=(List<Shelter>)request.getAttribute("list");
 
 <h1>空き情報一覧</h1>
 <form action="/grad2021_groupA/Shelter_DateServlet" method="post">
-<%if(list !=null && list.size()>0){ %>
+
 <table>
 <hr>
 
@@ -32,7 +32,7 @@ List<Shelter> list=(List<Shelter>)request.getAttribute("list");
 <%} %>
 
 </table>
-<%} %>
+<a href=/grad2021_groupA/MenuServlet>メニュー画面へ</a>
 </form>
 </body>
 </html>

@@ -8,5 +8,6 @@
 </head>
 <body>
 <h1>ログアウトしました</h1>
+<a href=>ログイン画面へ</a>
 </body>
 </html>

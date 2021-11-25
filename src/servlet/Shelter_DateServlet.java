@@ -25,7 +25,7 @@ public class Shelter_DateServlet extends HttpServlet {
 //	    	s.getId();
 //	    	s.getShelter_conditions();
 //		    s.getShelter_vacancy();
-//		    
+//
 //	    }
 	    request.setAttribute("list", list);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/shelter.jsp");
@@ -48,7 +48,7 @@ public class Shelter_DateServlet extends HttpServlet {
 	    	s.getCapacity();
 	    	request.setAttribute("s", s);
 	    }
-	RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/shelter_date.jsp");
+	RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/shelter_date.jsp");
 	dispatcher.forward(request, response);
 	}
 

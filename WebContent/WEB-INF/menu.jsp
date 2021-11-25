@@ -10,7 +10,7 @@
 <body>
 <ul id="nav">
 <li><a href="/grad2021_groupA/ChildrenList">児童一覧</a><br></li>
-<li><a href="/grad2021_groupA/Shelter_DateServlet">施設一覧</a><br></li>
+<li><a href="/grad2021_groupA/Shelter_DateServlet">空き情報</a><br></li>
 <li><a href="/grad2021_groupA/ChildrenList">生活状況</a><br></li>
 <li><a href="/grad2021_groupA/Interview_Main">面談内容</a><br></li>
 <li><a href="/grad2021_groupA/Abuse_Except_Main">虐待以外</a><br></li>
