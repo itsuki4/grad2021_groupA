@@ -48,7 +48,7 @@ while (rs.next()) {
 <td><%= rs.getString("parent_job")%></td>
 <td><%= rs.getString("parent_phone")%></td>
 <td><%= rs.getString("brother1")%></td>
-<td><%= rs.getString("brother2")%></td>3
+<td><%= rs.getString("brother2")%></td>
 <td><%= rs.getString("parent_ok")%></td>
 <td><%= rs.getString("person_remarks")%></td>
 <td><%= rs.getString("person_gender")%></td>
