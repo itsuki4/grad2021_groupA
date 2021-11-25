@@ -46,7 +46,7 @@ public void jspInit() {
             while (rs.next()) {
 %>
 
-
+<tr>
 <td><%= rs.getInt("person_id") %></td>
 <td><%= rs.getInt("person_body") %></td>
 <td><%= rs.getInt("person_check") %></td>
@@ -74,7 +74,7 @@ public void jspInit() {
 <td><%= rs.getString("person_remarks") %></td>
 <td><%= rs.getString("create_data") %></td>
 
-
+</tr>
 <%
             }
         } catch (Exception e) {
