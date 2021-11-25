@@ -19,7 +19,7 @@ public class Health_dateDAO {
 
 
 		  public List<Health_date> findAll() {
-			  List<Health_date> healthList = new ArrayList<>();
+			  List<Health_date> healthList = new ArrayList<Health_date>();
 
 			  try(Connection conn = DriverManager.getConnection(
 			          JDBC_URL, DB_USER, DB_PASS)) {
@@ -78,60 +78,59 @@ public class Health_dateDAO {
 
 			  }
 
-			  public boolean create(Health_date health_date) {
-			    // データベース接続
-		    try(Connection conn = DriverManager.getConnection(
-			          JDBC_URL, DB_USER, DB_PASS)) {
-
-			      // INSERT文の準備(idは自動連番なので指定しなくてよい
-			      String sql = "INSERT INTO HEALTH_DATE(PERSON_BODY, PERSON_CHECK, PERSON_DATAIL, ALLERGIES, ALLERGIES_DEGREE,"
-			      		+ "ALLERGIES_REMARKS, CHRONIC_CONDITION, CHRONIC_CORRESPONDENCE, INSOMNIA, FRIGHTENED, DEPRESSION,"
-			      		+ "MENTAL_REMARKS, SUICIDE, DEHYDRATION, MALNUTRITION, UNBALANCED_DIET, UNBALANCED_REMARKS,"
-			      		+ "SCRATCH_POINT, SCRATCH_NUMBER, SCRATCH_SIZE, SCRATCH_COLOUR, SCRATCH_REMARKS, HINDRANCE,"
-			      		+ "PERSON_REMARKS, CREATE_DATA)"
-			      		+ "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-			      PreparedStatement pStmt = conn.prepareStatement(sql);
-			      // INSERT文中の「?」に使用する値を設定しSQLを完成
-			      pStmt.setInt(1, health_date.getPerson_body());
-			      pStmt.setInt(2, health_date.getPerson_check());
-			      pStmt.setInt(3, health_date.getPerson_datail());
-			      pStmt.setString(4, health_date.getAllergies());
-			      pStmt.setInt(5, health_date.getAllergies_degree());
-			      pStmt.setString(6, health_date.getAllergies_remarks());
-			      pStmt.setString(7, health_date.getChronic_condition());
-			      pStmt.setString(8, health_date.getChronic_correspondence());
-			      pStmt.setInt(9, health_date.getInsomnia());
-			      pStmt.setInt(10, health_date.getFrightened());
-			      pStmt.setInt(11, health_date.getDepression());
-			      pStmt.setString(12, health_date.getMental_remarks());
-			      pStmt.setInt(13, health_date. getSuicide());
-			      pStmt.setInt(14, health_date.getDehydration());
-			      pStmt.setInt(15, health_date.getMalnutrition());
-			      pStmt.setInt(16, health_date.getUnbalanced_diet());
-			      pStmt.setString(17, health_date.getUnbalanced_remarks());
-			      pStmt.setString(18, health_date.getScratch_point());
-			      pStmt.setInt(19, health_date.getScratch_number());
-			      pStmt.setInt(20, health_date.getScratch_size());
-			      pStmt.setInt(21, health_date.getScratch_colour());
-			      pStmt.setString(22, health_date.getScratch_remarks());
-			      pStmt.setInt(23, health_date.getHindrance());
-			      pStmt.setString(24, health_date.getPerson_remarks());
-			      pStmt.setString(25, health_date.getCreate_data());
-
-			      // INSERT文を実行
-			      int result = pStmt.executeUpdate();
-
-			      if (result != 1) {
-			        return false;
-			      }
-			    } catch (SQLException e) {
-			      e.printStackTrace();
-			      return false;
-			    }
-		    	return true;
-			  }
+//			  public boolean create(Health_date health_date) {
+//			    // データベース接続
+//		    try(Connection conn = DriverManager.getConnection(
+//			          JDBC_URL, DB_USER, DB_PASS)) {
+//
+//			      // INSERT文の準備(idは自動連番なので指定しなくてよい
+//			      String sql = "INSERT INTO HEALTH_DATE(PERSON_BODY, PERSON_CHECK, PERSON_DATAIL, ALLERGIES, ALLERGIES_DEGREE,"
+//			      		+ "ALLERGIES_REMARKS, CHRONIC_CONDITION, CHRONIC_CORRESPONDENCE, INSOMNIA, FRIGHTENED, DEPRESSION,"
+//			      		+ "MENTAL_REMARKS, SUICIDE, DEHYDRATION, MALNUTRITION, UNBALANCED_DIET, UNBALANCED_REMARKS,"
+//			      		+ "SCRATCH_POINT, SCRATCH_NUMBER, SCRATCH_SIZE, SCRATCH_COLOUR, SCRATCH_REMARKS, HINDRANCE,"
+//			      		+ "PERSON_REMARKS, CREATE_DATA)"
+//			      		+ "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+//			      PreparedStatement pStmt = conn.prepareStatement(sql);
+//			      // INSERT文中の「?」に使用する値を設定しSQLを完成
+//			      pStmt.setInt(1, health_date.getPerson_body());
+//			      pStmt.setInt(2, health_date.getPerson_check());
+//			      pStmt.setInt(3, health_date.getPerson_datail());
+//			      pStmt.setString(4, health_date.getAllergies());
+//			      pStmt.setInt(5, health_date.getAllergies_degree());
+//			      pStmt.setString(6, health_date.getAllergies_remarks());
+//			      pStmt.setString(7, health_date.getChronic_condition());
+//			      pStmt.setString(8, health_date.getChronic_correspondence());
+//			      pStmt.setInt(9, health_date.getInsomnia());
+//			      pStmt.setInt(10, health_date.getFrightened());
+//			      pStmt.setInt(11, health_date.getDepression());
+//			      pStmt.setString(12, health_date.getMental_remarks());
+//			      pStmt.setInt(13, health_date. getSuicide());
+//			      pStmt.setInt(14, health_date.getDehydration());
+//			      pStmt.setInt(15, health_date.getMalnutrition());
+//			      pStmt.setInt(16, health_date.getUnbalanced_diet());
+//			      pStmt.setString(17, health_date.getUnbalanced_remarks());
+//			      pStmt.setString(18, health_date.getScratch_point());
+//			      pStmt.setInt(19, health_date.getScratch_number());
+//			      pStmt.setInt(20, health_date.getScratch_size());
+//			      pStmt.setInt(21, health_date.getScratch_colour());
+//			      pStmt.setString(22, health_date.getScratch_remarks());
+//			      pStmt.setInt(23, health_date.getHindrance());
+//			      pStmt.setString(24, health_date.getPerson_remarks());
+//			      pStmt.setString(25, health_date.getCreate_data());
+//
+//			      // INSERT文を実行
+//			      int result = pStmt.executeUpdate();
+//
+//			      if (result != 1) {
+//			        return false;
+//			      }
+//			    } catch (SQLException e) {
+//			      e.printStackTrace();
+//			      return false;
+//			    }
+//		    	return true;
+//			  }
 
 		  }
-
 
 

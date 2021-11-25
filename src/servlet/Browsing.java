@@ -1,5 +1,3 @@
-//参考先Abuse_Except_Main.java
-
 package servlet;
 
 import java.io.IOException;

@@ -1,6 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.*"%>
 
+
 <%!
 public void jspInit() {
     try {
@@ -20,28 +21,46 @@ public void jspInit() {
 
 <body>
 <P><font size="5">健康状態記録一覧</font></P>
-<table border = '1'>
 
+<table border='1'>
 <tr>
-<th>児童ID</th><th>身長</th><th>体重</th><th>体重の状態</th>
-<th>アレルギー7品目</th><th>アレルギー症状の程度</th><th>アレルギー備考欄</th>
-<th>病気・薬</th><th>病気の対応</th><th>不眠</th><th>不安・怯え</th>
-<th>抑うつ</th><th>精神症状備考欄</th></tr>
-<tr>
-<th>自殺行為</th><th>脱水症状</th>
-<th>栄養不足</th><th>偏食</th><th>偏食備考欄</th><th>傷の部位</th>
-<th>傷の数</th><th>傷の大きさ</th><th>傷の色</th><th>傷についての備考欄</th>
-<th>障害の有無</th><th>備考欄</th><th>記入日</th>
-</tr>
+
+<th>児童ID</th>
+<th>身長</th>
+<th>体重</th>
+<th>体重の状態</th>
+<th>アレルギー7品目</th>
+<th>アレルギー症状の程度</th>
+<th>アレルギー備考欄</th>
+<th>病気・薬</th>
+<th>病気の対応</th>
+<th>不眠</th>
+<th>不安・怯え</th>
+<th>抑うつ</th>
+<th>精神症状備考欄</th>
+<th>自殺行為</th>
+<th>脱水症状</th>
+<th>栄養不足</th>
+<th>偏食</th>
+<th>偏食備考欄</th>
+<th>傷の部位</th>
+<th>傷の数</th>
+<th>傷の大きさ</th>
+<th>傷の色</th>
+<th>傷についての備考欄</th>
+<th>障害の有無</th>
+<th>備考欄</th>
+<th>記入日</th>
 
 <%
 	Connection con = null;
 	Statement stmt = null;
 	ResultSet rs = null;
+
 		try {
     		con = DriverManager.getConnection("jdbc:mySQL://localhost/groupa", "root", "");
     		stmt = con.createStatement();
-            rs = stmt.executeQuery("select *  price from Health_date");
+            rs = stmt.executeQuery("select * price from health_date");
 
             // 得られた結果をレコードごとに表示
             while (rs.next()) {
@@ -75,7 +94,6 @@ public void jspInit() {
 <td><%= rs.getString("person_remarks") %></td>
 <td><%= rs.getString("create_data") %></td>
 
-</tr>
 <%
             }
         } catch (Exception e) {
