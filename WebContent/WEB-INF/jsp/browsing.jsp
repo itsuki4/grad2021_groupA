@@ -17,6 +17,7 @@ public void jspInit() {
 <title>健康状態記録</title>
 <link rel= "stylesheet" type= "text/css" href= "/grad2021_groupA/css/style.css">
 </head>
+
 <body>
 <P><font size="5">健康状態記録一覧</font></P>
 <table border = '1'>
@@ -38,7 +39,7 @@ public void jspInit() {
 	Statement stmt = null;
 	ResultSet rs = null;
 		try {
-    		con = DriverManager.getConnection("jdbc:mysql://localhost/Groupa", "root", "");
+    		con = DriverManager.getConnection("jdbc:mySQL://localhost/groupa", "root", "");
     		stmt = con.createStatement();
             rs = stmt.executeQuery("select *  price from Health_date");
 
