@@ -1,38 +1,57 @@
 package dao;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+
+import model.Health;
 import model.Health_date;
 
 public class Health_dateDAO {
 
-	 private final String JDBC_URL =
-	          "jdbc:mySQL://localhost/groupa";
-	  private final String DB_USER = "root";
-	  private final String DB_PASS = "";
+		private Connection db;
+		private PreparedStatement ps;
+		private ResultSet rs;
+
+	//接続共通処理
+	    private void connect() throws NamingException, SQLException {
+	      Context context = new InitialContext();
+	      DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/jsp");
+	      this.db = ds.getConnection();
+	    }
+	  //切断共通処理
+	      private void disconnect() {
+	        try {
+	          if (rs != null) {
+	            rs.close();
+	          }
+	          if (ps != null) {
+	            ps.close();
+	          }
+	          if (db != null) {
+	            db.close();
+	          }
+	        } catch (SQLException e) {
+	          e.printStackTrace();
+	        }
+	      }
 
 
 		  public List<Health_date> findAll() {
 			  List<Health_date> healthList = new ArrayList<Health_date>();
 
-			  try(Connection conn = DriverManager.getConnection(
-			          JDBC_URL, DB_USER, DB_PASS)) {
-				  String sql = "INSERT INTO HEALTH_DATE(PERSON_BODY, PERSON_CHECK, PERSON_DATAIL, ALLERGIES, ALLERGIES_DEGREE,"
-				      		+ "ALLERGIES_REMARKS, CHRONIC_CONDITION, CHRONIC_CORRESPONDENCE, INSOMNIA, FRIGHTENED, DEPRESSION,"
-				      		+ "MENTAL_REMARKS, SUICIDE, DEHYDRATION, MALNUTRITION, UNBALANCED_DIET, UNBALANCED_REMARKS,"
-				      		+ "SCRATCH_POINT, SCRATCH_NUMBER, SCRATCH_SIZE, SCRATCH_COLOUR, SCRATCH_REMARKS, HINDRANCE,"
-				      		+ "PERSON_REMARKS, CREATE_DATA)";
-				  PreparedStatement pStmt = conn.prepareStatement(sql);
-
-				  ResultSet rs = pStmt.executeQuery();
-
-
+			  try {
+				  this.connect();
+	    	        ps = db.prepareStatement("SELECT * FROM Health_date");
+	    	        rs = ps.executeQuery();
 
 			      while (rs.next()) {
 			        int person_id = rs.getInt("person_id");
@@ -70,14 +89,36 @@ public class Health_dateDAO {
 
 			        healthList.add(health_date);
 			      }
-			    } catch (SQLException e) {
+			    } catch (NamingException | SQLException e) {
 			      e.printStackTrace();
-			      return null;
+			    } finally {
+			    	this.disconnect();
+			    }
+			  return healthList;
+		  }
 
-			    } return healthList;
+		  public List<Health> HealthAll() {
+			  List<Health> List = new ArrayList<Health>();
+			  try {
+	    	        this.connect();
+	    	        ps = db.prepareStatement("SELECT person_id, person_remarks, create_data FROM health_date");
+	    	        rs = ps.executeQuery();
 
-			  }
+	    	        while (rs.next()) {
+	    	        	int person_id = rs.getInt("person_id");
+	    	        	String person_remarks = rs.getString("person_remarks");
+				        String create_data = rs.getString("create_data");
 
+				        Health health = new Health(person_id, person_remarks, create_data);
+				        List.add(health);
+	    	        }
+			  } catch (NamingException | SQLException e) {
+	    	        e.printStackTrace();
+	    	      }finally {
+	    	        this.disconnect();
+	    	      }
+	    	      return List;
+		  }
 //			  public boolean create(Health_date health_date) {
 //			    // データベース接続
 //		    try(Connection conn = DriverManager.getConnection(
