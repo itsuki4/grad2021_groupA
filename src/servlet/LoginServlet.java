@@ -14,10 +14,11 @@ import dao.ShelterDAO;
 import model.Shelter_Date;
 
 
-@WebServlet("/ShelterServlet")
-public class ShelterServlet extends HttpServlet {
+@WebServlet("/LoginServlet")
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ShelterDAO dao=new ShelterDAO();
 	    List<Shelter_Date> list=dao.findAll();
@@ -33,8 +34,14 @@ public class ShelterServlet extends HttpServlet {
 	    	s.getCapacity();
 	    	request.setAttribute("s", s);
 	    }
-	RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/shelter_date.jsp");
-	dispatcher.forward(request, response);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/login.jsp");
+		dispatcher.forward(request, response);
+	}
+
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }

@@ -21,12 +21,6 @@ public class Shelter_DateServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ShelterDAO dao=new ShelterDAO();
 	    List<Shelter> list=dao.ShelterAll();
-//	    for (Shelter s : list) {
-//	    	s.getId();
-//	    	s.getShelter_conditions();
-//		    s.getShelter_vacancy();
-//		    
-//	    }
 	    request.setAttribute("list", list);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/shelter.jsp");
 		dispatcher.forward(request, response);

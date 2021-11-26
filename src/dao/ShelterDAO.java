@@ -92,5 +92,29 @@ public class ShelterDAO {
 	    	      }
 	    	      return list;
 	    	    }
+	      
+//	      
+//	      public List<ShelterLogin> login() {
+//	    	  List<ShelterLogin> list = new ArrayList<ShelterLogin>();
+//	    	      try {
+//	    	        this.connect();
+//	    	        ps = db.prepareStatement("SELECT shelter_name1,shelter_id,shelter_conditions,shelter_vacancy FROM shelter_date");
+//	    	        rs = ps.executeQuery();
+//	    	        while (rs.next()) {
+//	    	        	int id = rs.getInt("shelter_id");
+//	    	        	String shelter_name1 = rs.getString("shelter_name1");
+//	    		        String shelter_conditions = rs.getString("shelter_conditions");
+//	    		        int shelter_vacancy = rs.getInt("shelter_vacancy");
+//	    		        Shelter l = new Shelter(id,shelter_name1, shelter_conditions,shelter_vacancy);
+//	    	          list.add(l);
+//	    	        }
+//	    	      } catch (NamingException | SQLException e) {
+//	    	        e.printStackTrace();
+//	    	      }finally {
+//	    	        this.disconnect();
+//	    	      }
+//	    	      return list;
+//	    	    }
+	      
 
 }

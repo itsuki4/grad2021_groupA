@@ -13,7 +13,8 @@ List<Shelter> list=(List<Shelter>)request.getAttribute("list");
 <body>
 
 <h1>空き情報一覧</h1>
-<form action="/grad2021_groupA/Shelter_DateServlet" method="post">
+<p>検索：<input type="text"></p>
+<form  method="post">
 <%if(list !=null && list.size()>0){ %>
 <table>
 <hr>
@@ -22,13 +23,26 @@ List<Shelter> list=(List<Shelter>)request.getAttribute("list");
 <tr><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td></tr>
 <%for(Shelter s:list){ %>
 <tr>
-<td><%=s.getShelter_name1() %></td>
-<td><%=s.getId() %></td>
+<td><a href="/grad2021_groupA/ShelterServlet"><%=s.getShelter_name1() %></a></td>
+<td>　<%=s.getId() %></td>
+
 <td><%=s.getShelter_conditions() %></td>
-<td>　　<%=s.getShelter_vacancy() %></td>
-<td><input type="submit" value="詳細"></td>
+<td>
+<%
+if(s.getShelter_vacancy() > 2){
+%>
+<font color="red">　　<%=s.getShelter_vacancy() %></font>
+<%
+}else{
+	%>
+	　　<%=s.getShelter_vacancy() %>
+	<%
+}
+%>
+</td>
+
 </tr>
-<tr><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td></tr>
+<tr><td><hr></td><td><hr></td><td><hr></td><td><hr></td></tr>
 <%} %>
 
 </table>
