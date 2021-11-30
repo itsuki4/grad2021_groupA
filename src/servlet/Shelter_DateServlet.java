@@ -28,20 +28,24 @@ public class Shelter_DateServlet extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		ShelterDAO dao=new ShelterDAO();
+//	    List<Shelter_Date> list=dao.findAll();
+//	    for (Shelter_Date s : list) {
+//	    	s.getId();
+//	    	s.getShelter_name1();
+//	    	s.getShelter_name2();
+//	    	s.getShelter_address1();
+//	    	s.getShelter_address2();
+//	    	s.getShelter_address3();
+//	    	s.getShelter_address4();
+//	    	s.getTel();
+//	    	s.getCapacity();
+//	    	request.setAttribute("s", s);
+//	    }
+		
 		ShelterDAO dao=new ShelterDAO();
 	    List<Shelter_Date> list=dao.findAll();
-	    for (Shelter_Date s : list) {
-	    	s.getId();
-	    	s.getShelter_name1();
-	    	s.getShelter_name2();
-	    	s.getShelter_address1();
-	    	s.getShelter_address2();
-	    	s.getShelter_address3();
-	    	s.getShelter_address4();
-	    	s.getTel();
-	    	s.getCapacity();
-	    	request.setAttribute("s", s);
-	    }
+	    request.setAttribute("list", list);
 	RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/shelter_date.jsp");
 	dispatcher.forward(request, response);
 	}
