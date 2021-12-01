@@ -8,6 +8,6 @@
 </head>
 <body>
 <h1>ログアウトしました</h1>
-<a href=>ログイン画面へ</a>
+<a href=/grad2021_groupA/LoginServlet>ログイン画面へ</a>
 </body>
 </html>

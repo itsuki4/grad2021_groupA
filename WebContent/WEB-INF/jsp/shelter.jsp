@@ -32,7 +32,7 @@ List<Shelter> list=(List<Shelter>)request.getAttribute("list");
 <%} %>
 
 </table>
-<a href=/grad2021_groupA/MenuServlet>メニュー画面へ</a>
 </form>
+<input type="submit" onclick="location.href='/grad2021_groupA/MenuServlet'" value="戻る">
 </body>
 </html>

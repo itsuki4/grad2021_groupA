@@ -18,5 +18,6 @@
 <p>電話番号：<%=s.getTel() %></p>
 <p>定員数：<%=s.getCapacity() %></p>
 <input type="submit" onclick="location.href='/grad2021_groupA/Shelter_DateServlet'" value="戻る">
+<input type="submit" onclick="location.href='/grad2021_groupA/ShelterLoginServlet'" value="変更">
 </body>
 </html>

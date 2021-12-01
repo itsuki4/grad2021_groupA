@@ -17,11 +17,16 @@ public void jspInit() {
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>児童一覧</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="/grad2021_groupA/css/style.css">
 </head>
 
 <body>
-<h1>保護児童一覧</h1>
-
+<P><font size="5">児童一覧</font></P>
+<table class="table table-striped">
+<tr><th>児童ID</th><th>児童名前</th><th>児童名前（カナ）</th></tr>
 
 <%
         // データベースへのアクセス開始
@@ -39,10 +44,11 @@ public void jspInit() {
             // 得られた結果をレコードごとに表示
             while (rs.next()) {
 %>
-
-                <%= rs.getString("person_id")%>
-                <%= rs.getString("person_name1")%>
-                <%= rs.getString("person_name2")%><br>
+<tr>
+    <td><%= rs.getString("person_id")%></td>
+    <td><%= rs.getString("person_name1")%></td>
+    <td><%= rs.getString("person_name2")%><br></td>
+</tr>
 <%
             } } catch (Exception e) {
             e.printStackTrace();
@@ -54,7 +60,7 @@ public void jspInit() {
         }
 %>
 
-
-        <a href=/grad2021_groupA/MenuServlet>メニュー画面へ</a>
+</table>
+<input type="submit" onclick="location.href='/grad2021_groupA/MenuServlet'" value="戻る">
 </body>
 </html>

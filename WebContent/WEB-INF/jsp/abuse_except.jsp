@@ -15,12 +15,15 @@ public void jspInit() {
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>虐待以外の詳細</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="/grad2021_groupA/css/style.css">
 </head>
 
 <body>
 <P><font size="5">虐待以外の詳細</font></P>
-<table border='1'><tr><th>保護内容　　</th><th>児童ID　　</th><th>保護理由</th><th>今後の方向性</th><th>対象者の状況　　</th><th>現状と課題　　</th><th>備考論</th></tr>
+<table border='1' class="table table-striped"><tr><th>保護内容　　</th><th>児童ID　　</th><th>保護理由</th><th>今後の方向性</th><th>対象者の状況　　</th><th>現状と課題　　</th><th>備考論</th></tr>
 
 <%
         Connection con = null;
@@ -29,7 +32,7 @@ public void jspInit() {
         try {
             con = DriverManager.getConnection("jdbc:mysql://localhost/Groupa", "root", "");
             stmt = con.createStatement();
-		    rs = stmt.executeQuery("select * from abuse_except");
+		    rs = stmt.executeQuery("select * from abuse_excepts");
             while (rs.next()) {
 %>
     <tr>
@@ -56,9 +59,8 @@ public void jspInit() {
         </table>
 <form action="">
 <p>
-<input type = "submit" value = "戻る">
 </p>
 </form>
- <a href=/grad2021_groupA/MenuServlet>メニュー画面へ</a>
+<input type="submit" onclick="location.href='/grad2021_groupA/MenuServlet'" value="戻る">
 </body>
 </html>

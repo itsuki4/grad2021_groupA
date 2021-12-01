@@ -8,6 +8,6 @@ driverClassName="com.mysql.jdbc.Driver"
 url="jdbc:mySQL://localhost/GroupA"
 connectionProperties="autoReconnect=true;verifyServerCertificate=false;useSSL=false;requireSSL=false"
 username="root"
- password=""
+password=""
 validationQuery="select 1"/>
 </Context>
