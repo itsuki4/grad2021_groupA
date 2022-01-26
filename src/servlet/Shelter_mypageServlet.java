@@ -14,14 +14,27 @@ import dao.ShelterDAO;
 import model.Shelter_Date;
 
 
-@WebServlet("/LoginServlet")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/Shelter_mypageServlet")
+public class Shelter_mypageServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
+
+    public Shelter_mypageServlet() {
+        super();
+    }
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html; charset=Windows-31J");
+
+		int id = Integer.parseInt(request.getParameter("id"));
+		
+		
 		ShelterDAO dao=new ShelterDAO();
-	    List<Shelter_Date> list=dao.findAll();
+	    
+	    
+	    
+	    List<Shelter_Date> list=dao.ShelterDetail(id);
 	    for (Shelter_Date s : list) {
 	    	s.getId();
 	    	s.getShelter_name1();
@@ -34,14 +47,17 @@ public class LoginServlet extends HttpServlet {
 	    	s.getCapacity();
 	    	request.setAttribute("s", s);
 	    }
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/login.jsp");
+	    
+	    
+		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/shelter_mypage.jsp");
 		dispatcher.forward(request, response);
+		
+		
 	}
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/login.jsp");
-		dispatcher.forward(request, response);
+		
 	}
 
 }

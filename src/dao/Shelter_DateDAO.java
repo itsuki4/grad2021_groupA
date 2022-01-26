@@ -41,7 +41,9 @@ public class Shelter_DateDAO {
 		        String shelter_address4 = rs.getString("shelter_address4");
 		        String tel = rs.getString("shelter_tel");
 		        int capacity = rs.getInt("shelter_capacity");
-		        Shelter_Date shelter_date = new Shelter_Date(id, shelter_name1,shelter_name2, shelter_address1,shelter_address2,shelter_address3,shelter_address4,tel,capacity);
+		        String shelter_conditions = rs.getString("shelter_conditions");
+		        int shelter_vacancy = rs.getInt("shelter_vacancy");
+		        Shelter_Date shelter_date = new Shelter_Date(id, shelter_name1,shelter_name2, shelter_address1,shelter_address2,shelter_address3,shelter_address4,tel,capacity,shelter_conditions,shelter_vacancy);
 		        dateList.add(shelter_date);
 		      }
 		    } catch (SQLException e) {

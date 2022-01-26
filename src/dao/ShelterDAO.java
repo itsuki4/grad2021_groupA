@@ -14,6 +14,7 @@ import javax.sql.DataSource;
 
 import model.Shelter;
 import model.Shelter_Date;
+import model.Shelter_chatList;
 
 public class ShelterDAO {
 
@@ -44,32 +45,7 @@ public class ShelterDAO {
 	        }
 	      }
 
-	      public List<Shelter_Date> findAll() {
-	    	  List<Shelter_Date> list = new ArrayList<Shelter_Date>();
-	    	      try {
-	    	        this.connect();
-	    	        ps = db.prepareStatement("SELECT * FROM shelter_date");
-	    	        rs = ps.executeQuery();
-	    	        while (rs.next()) {
-	    	        	int id = rs.getInt("shelter_id");
-	    		        String shelter_name1 = rs.getString("shelter_name1");
-	    		        String shelter_name2 = rs.getString("shelter_name2");
-	    		        String shelter_address1 = rs.getString("shelter_address1");
-	    		        String shelter_address2 = rs.getString("shelter_address2");
-	    		        String shelter_address3 = rs.getString("shelter_address3");
-	    		        String shelter_address4 = rs.getString("shelter_address4");
-	    		        String tel = rs.getString("shelter_tel");
-	    		        int capacity = rs.getInt("shelter_capacity");
-	    		        Shelter_Date l = new Shelter_Date(id, shelter_name1,shelter_name2, shelter_address1,shelter_address2,shelter_address3,shelter_address4,tel,capacity);
-	    	          list.add(l);
-	    	        }
-	    	      } catch (NamingException | SQLException e) {
-	    	        e.printStackTrace();
-	    	      }finally {
-	    	        this.disconnect();
-	    	      }
-	    	      return list;
-	    	    }
+
 
 	      public List<Shelter> ShelterAll() {
 	    	  List<Shelter> list = new ArrayList<Shelter>();
@@ -92,29 +68,140 @@ public class ShelterDAO {
 	    	      }
 	    	      return list;
 	    	    }
-	      
-//	      
-//	      public List<ShelterLogin> login() {
-//	    	  List<ShelterLogin> list = new ArrayList<ShelterLogin>();
-//	    	      try {
-//	    	        this.connect();
-//	    	        ps = db.prepareStatement("SELECT shelter_name1,shelter_id,shelter_conditions,shelter_vacancy FROM shelter_date");
-//	    	        rs = ps.executeQuery();
-//	    	        while (rs.next()) {
-//	    	        	int id = rs.getInt("shelter_id");
-//	    	        	String shelter_name1 = rs.getString("shelter_name1");
-//	    		        String shelter_conditions = rs.getString("shelter_conditions");
-//	    		        int shelter_vacancy = rs.getInt("shelter_vacancy");
-//	    		        Shelter l = new Shelter(id,shelter_name1, shelter_conditions,shelter_vacancy);
-//	    	          list.add(l);
-//	    	        }
-//	    	      } catch (NamingException | SQLException e) {
-//	    	        e.printStackTrace();
-//	    	      }finally {
-//	    	        this.disconnect();
-//	    	      }
-//	    	      return list;
-//	    	    }
-	      
+
+
+	      public List<Shelter_Date> search(String pre) throws Exception{
+	    	  List<Shelter_Date> list = new ArrayList<Shelter_Date>();
+	    	      try {
+	    	        this.connect();
+	    	        ps = db.prepareStatement("SELECT * FROM shelter_date where shelter_address2 like ?");
+	    	        ps.setString(1, "%"+ pre +"%");
+	    	        rs = ps.executeQuery();
+
+
+
+
+	    	        while (rs.next()) {
+	    	        	int id = rs.getInt("shelter_id");
+	    		        String shelter_name1 = rs.getString("shelter_name1");
+	    		        String shelter_name2 = rs.getString("shelter_name2");
+	    		        String shelter_address1 = rs.getString("shelter_address1");
+	    		        String shelter_address2 = rs.getString("shelter_address2");
+	    		        String shelter_address3 = rs.getString("shelter_address3");
+	    		        String shelter_address4 = rs.getString("shelter_address4");
+	    		        String tel = rs.getString("shelter_tel");
+	    		        int capacity = rs.getInt("shelter_capacity");
+	    		        String shelter_conditions = rs.getString("shelter_conditions");
+	    		        int shelter_vacancy = rs.getInt("shelter_vacancy");
+	    		        Shelter_Date l = new Shelter_Date(id, shelter_name1,shelter_name2, shelter_address1,shelter_address2,shelter_address3,shelter_address4,tel,capacity,shelter_conditions,shelter_vacancy);
+	    	          list.add(l);
+	    	        }
+	    	      } catch (NamingException | SQLException e) {
+	    	        e.printStackTrace();
+	    	      }finally {
+	    	        this.disconnect();
+	    	      }
+	    	      return list;
+	    	    }
+
+
+	      public List<Shelter_Date> ShelterDetail(int Sid) {
+	    	  List<Shelter_Date> list = new ArrayList<Shelter_Date>();
+	    	      try {
+	    	        this.connect();
+	    	        ps = db.prepareStatement("SELECT * FROM shelter_date where shelter_id like ?");
+	    	        ps.setInt(1, Sid);
+	    	        rs = ps.executeQuery();
+
+
+
+
+	    	        while (rs.next()) {
+	    	        	int id = rs.getInt("shelter_id");
+	    		        String shelter_name1 = rs.getString("shelter_name1");
+	    		        String shelter_name2 = rs.getString("shelter_name2");
+	    		        String shelter_address1 = rs.getString("shelter_address1");
+	    		        String shelter_address2 = rs.getString("shelter_address2");
+	    		        String shelter_address3 = rs.getString("shelter_address3");
+	    		        String shelter_address4 = rs.getString("shelter_address4");
+	    		        String tel = rs.getString("shelter_tel");
+	    		        int capacity = rs.getInt("shelter_capacity");
+	    		        String shelter_conditions = rs.getString("shelter_conditions");
+	    		        int shelter_vacancy = rs.getInt("shelter_vacancy");
+	    		        Shelter_Date l = new Shelter_Date(id, shelter_name1,shelter_name2, shelter_address1,shelter_address2,shelter_address3,shelter_address4,tel,capacity,shelter_conditions,shelter_vacancy);
+	    	          list.add(l);
+	    	        }
+	    	      } catch (NamingException | SQLException e) {
+	    	        e.printStackTrace();
+	    	      }finally {
+	    	        this.disconnect();
+	    	      }
+	    	      return list;
+	    	    }
+
+	      public List<Shelter_chatList> Shelter_chat(int Sid) {
+	    	  List<Shelter_chatList> list = new ArrayList<Shelter_chatList>();
+	    	      try {
+	    	        this.connect();
+	    	        ps = db.prepareStatement("SELECT * FROM sheltercomment where shelter_id like ?");
+	    	        ps.setInt(1, Sid);
+	    	        rs = ps.executeQuery();
+
+
+	    	        while (rs.next()) {
+	    	        	int id = rs.getInt("shelter_id");
+	    		        String shelter_comment = rs.getString("shelter_comment");
+
+
+	    		        String interview_date = rs.getString("interview_date");
+
+	    		        Shelter_chatList l = new  Shelter_chatList(id, shelter_comment,interview_date);
+	    	          list.add(l);
+	    	        }
+	    	      } catch (NamingException | SQLException e) {
+	    	        e.printStackTrace();
+	    	      }finally {
+	    	        this.disconnect();
+	    	      }
+	    	      return list;
+	    	    }
+
+
+	      public List<Shelter_Date> vacancySearch(String v){
+	    	  List<Shelter_Date> list = new ArrayList<Shelter_Date>();
+	    	      try {
+	    	        this.connect();
+	    	        ps = db.prepareStatement("SELECT * FROM shelter_date where shelter_conditions like ?");
+	    	        ps.setString(1, "%"+ v +"%");
+	    	        rs = ps.executeQuery();
+
+
+
+
+	    	        while (rs.next()) {
+	    	        	int id = rs.getInt("shelter_id");
+	    		        String shelter_name1 = rs.getString("shelter_name1");
+	    		        String shelter_name2 = rs.getString("shelter_name2");
+	    		        String shelter_address1 = rs.getString("shelter_address1");
+	    		        String shelter_address2 = rs.getString("shelter_address2");
+	    		        String shelter_address3 = rs.getString("shelter_address3");
+	    		        String shelter_address4 = rs.getString("shelter_address4");
+	    		        String tel = rs.getString("shelter_tel");
+	    		        int capacity = rs.getInt("shelter_capacity");
+	    		        String shelter_conditions = rs.getString("shelter_conditions");
+	    		        int shelter_vacancy = rs.getInt("shelter_vacancy");
+	    		        Shelter_Date l = new Shelter_Date(id, shelter_name1,shelter_name2, shelter_address1,shelter_address2,shelter_address3,shelter_address4,tel,capacity,shelter_conditions,shelter_vacancy);
+	    	          list.add(l);
+	    	        }
+	    	      } catch (NamingException | SQLException e) {
+	    	        e.printStackTrace();
+	    	      }finally {
+	    	        this.disconnect();
+	    	      }
+	    	      return list;
+	    	    }
+
+
+
 
 }
