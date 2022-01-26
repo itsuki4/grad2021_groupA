@@ -7,14 +7,14 @@ Health_date date = (Health_date)request.getAttribute("date");
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>健康状態記録/詳細</title>
+<title>健康状態記録/新規追加</title>
 <link rel= "stylesheet" type= "text/css" href= "/grad2021_groupA/css/style.css">
 </head>
 <body>
-<p><font size="5">健康状態詳細情報</font></p>
+<p><font size="4">健康状態記録を追加しました</font></p>
 
 <p>児童ID：<%= date.getPerson_id() %></p>
+
 <p>身長：<%= date.getPerson_body() %></p>
 <p>体重：<%= date.getPerson_check() %></p>
 <p>体重の状態：<%= date.getPerson_datail() %>
@@ -35,7 +35,7 @@ if(date.getAllergies_degree() ==1){
 	out.println("・軽症");
 } else if(date.getAllergies_degree() ==2){
 	out.println("・重症");
-} else {
+} else if(date.getAllergies_degree() ==3){
 	out.println("なし");
 }
 %>
@@ -191,7 +191,7 @@ if (date.getHindrance() == 1){
 </p>
 <p>児童の備考欄：<%= date.getPerson_remarks() %></p>
 <p>記入日：<%= date.getCreate_data() %></p>
-<p><a href="/grad2021_groupA/Browsing">戻る</a></p>
-<p><a href="/grad2021_groupA/BrowsingEdit?id=<%= date.getPerson_id() %>">編集</a></p>
+<p><a href="/grad2021_groupA/Browsing">健康状態記録一覧に戻る</a></p>
+
 </body>
 </html>

@@ -1,3 +1,4 @@
+//なんかのパスワード↓
 //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
 package model;
 
@@ -24,5 +25,17 @@ public class Health {
 
 	public String getCreate_data() {
 		return create_data;
+	}
+
+	public void setPerson_id(int person_id) {
+		this.person_id= person_id;
+	}
+
+	public void setPerson_remarks(String person_remarks) {
+		this.person_remarks = person_remarks;
+	}
+
+	public void setCreate_data(String create_data) {
+		this.create_data = create_data;
 	}
 }

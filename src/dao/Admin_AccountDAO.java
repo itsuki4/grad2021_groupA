@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import model.Admin_Account;
+import model.Admin_Account; //参考ページではAccountBeans
 import model.Admin_Login;
 
 public class Admin_AccountDAO {
