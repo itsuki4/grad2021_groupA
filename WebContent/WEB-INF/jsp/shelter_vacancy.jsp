@@ -16,6 +16,7 @@
 <form action="/grad2021_groupA/ShelterVacancyServlet" method="get">
 <article><table class="ta1">
 <tr>
+
 <th><h3>性別</h3></th>
 <td><input type="checkbox" name="vacancy" value="女"><label for="Hokkaidô">女子</label>
 <input type="checkbox" name="vacancy" value="男"><label for="Aomori">男子</label>
