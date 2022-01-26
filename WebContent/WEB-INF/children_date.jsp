@@ -24,8 +24,6 @@ public void jspInit() {
 </head>
 
 <body>
-<P><font size="5">児童一覧</font></P>
-
 <table class="table table-striped">
 <tr><th>児童ID</th><th>施設名</th><th>施設名（カナ）</th><th>児童名前</th><th>児童名前（カナ）</th><th>登録日</th><th>削除日</th><th>施設ID</th><th>保護者名</th><th>保護者名（カナ）</th><th>兄弟の有無</th></tr>
 
@@ -58,6 +56,9 @@ public void jspInit() {
 	<td><%= rs.getString("person_parent2")%></td>
 	<td><%= rs.getString("person_brother") %></td>
 
+    <td><a href="/grad2021_groupA/Children_Update?id=<%=rs.getString("person_id")%>">編集</a>
+	<a href="/joytas9/Delete?id=<%=rs.getString("person_id")%>" onclick="return confirm('児童ID<%=rs.getString("person_id")%>を削除してよろしいですか？');">削除</a></td>
+
 </tr>
 <%
             } } catch (Exception e) {
@@ -71,8 +72,6 @@ public void jspInit() {
 %>
 
 </table>
-<input type="submit" onclick="location.href='/grad2021_groupA/Children_Create'" value="新規追加">
-<input type="submit" onclick="location.href='/grad2021_groupA/Children_Date'" value="詳細">
-<input type="submit" onclick="location.href='/grad2021_groupA/MenuServlet'" value="戻る">
+<input type="submit" onclick="location.href='/grad2021_groupA/ChildrenList'" value="戻る">
 </body>
 </html>

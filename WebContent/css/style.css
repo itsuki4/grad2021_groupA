@@ -49,3 +49,17 @@ header{
 body{
 	color: #111;
 }
+.chil{
+	text-align: center;
+
+}
+.r{
+	border:1px;
+	float:left;
+	overflow: hidden;
+}
+.l{
+	float:left;
+	overflow: hidden;
+	padding-bottom:2px;
+}
