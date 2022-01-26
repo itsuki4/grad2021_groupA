@@ -8,10 +8,10 @@ public class Interview_Mutter implements Serializable{
 	private String interview_date;
 	private int staff_id;
 	private String staff_name1;
-	private int cooperation_attitude;
-	private int personality_progress;
-	private int mental_progress;
-	private int emotional_changes;
+	private String cooperation_attitude;
+	private String personality_progress;
+	private String mental_progress;
+	private String emotional_changes;
 	private String parental_opinion;
 	private String immediate_issues;
 	private String future_tasks;
@@ -19,7 +19,7 @@ public class Interview_Mutter implements Serializable{
 
 	public Interview_Mutter(String string) {}
 	public Interview_Mutter(int person_id,String person_name1,String interview_date,int staff_id,String staff_name1,
-			int cooperation_attitude,int personality_progress,int mental_progress,int emotional_changes,String parental_opinion,
+			String cooperation_attitude,String personality_progress,String mental_progress,String emotional_changes,String parental_opinion,
 			String immediate_issues,String future_tasks, String personality_remarks) {
 		this.person_id = person_id;
 		this.person_name1 = person_name1;
@@ -40,10 +40,10 @@ public class Interview_Mutter implements Serializable{
 	public String geinterview_date() {return interview_date;}
 	public int getstaff_id() {return staff_id;}
 	public String getstaff_name1() {return staff_name1;}
-	public int getcooperation_attitude() {return cooperation_attitude;}
-	public int getpersonality_progress() {return personality_progress;}
-	public int getmental_progress() {return mental_progress;}
-	public int getemotional_changes() {return emotional_changes;}
+	public String getcooperation_attitude() {return cooperation_attitude;}
+	public String getpersonality_progress() {return personality_progress;}
+	public String getmental_progress() {return mental_progress;}
+	public String getemotional_changes() {return emotional_changes;}
 	public String getparental_opinion() {return parental_opinion;}
 	public String getimmediate_issues() {return immediate_issues;}
 	public String getfuture_tasks() {return future_tasks;}

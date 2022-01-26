@@ -11,7 +11,6 @@ public class Abuse_Except_Mutter implements Serializable{
 	private int except_task;
 	private String except_remarks;
 
-	public Abuse_Except_Mutter(String string) {}
 	public Abuse_Except_Mutter(int person_protect,int person_id,int except_reason,int except_direction,int except_status,int except_task,String except_remarks) {
 		this.person_protect = person_protect;
 		this.person_id = person_id;

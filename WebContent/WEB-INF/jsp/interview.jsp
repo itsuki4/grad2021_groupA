@@ -20,34 +20,29 @@ public void jspInit() {
 
 <body>
 <P><font size="5">面談内容</font></P>
-<table border='1'><tr><th>児童ID　　</th><th>児童氏名　　</th><th>記載日</th><th>職員ID</th><th>職員氏名　　</th><th>協力態度　　</th><th>保護者の性格的問題の経過状況</th>
-                      <th>保護者の性格的問題の経過状況</th><th>子供への感情の変化</th><th>親の意見　　</th><th>当面の課題　　</th><th>今後の課題　　</th><th>備考欄</th></tr>
-
 <%
         Connection con = null;
         Statement stmt = null;
         ResultSet rs = null;
         try {
-            con = DriverManager.getConnection("jdbc:mysql://localhost/Groupa", "root", "");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/groupa", "root", "");
             stmt = con.createStatement();
 		    rs = stmt.executeQuery("select * from interview_content");
             while (rs.next()) {
 %>
-    <tr>
-    <td><%= rs.getInt("person_id")%></td>
-    <td><%= rs.getString("person_name1")%></td>
-    <td><%= rs.getString("interview_date")%></td>
-    <td><%= rs.getInt("staff_id")%></td>
-    <td><%= rs.getString("staff_name1")%></td>
-    <td><%= rs.getInt("cooperation_attitude")%></td>
-    <td><%= rs.getInt("personality_progress")%></td>
-    <td><%= rs.getInt("mental_progress")%></td>
-    <td><%= rs.getInt("emotional_changes")%></td>
-    <td><%= rs.getString("parental_opinion")%></td>
-    <td><%= rs.getString("immediate_issues")%></td>
-    <td><%= rs.getString("future_tasks")%></td>
-    <td><%= rs.getString("personality_remarks")%></td>
-    </tr>
+    <p>児童ID：<%= rs.getInt("person_id")%></p>
+    <p>児童氏名：<%= rs.getString("person_name1")%></p>
+    <p>記載日：<%= rs.getString("interview_date")%></p>
+    <p>職員ID:<%= rs.getInt("staff_id")%></p>
+    <p>職員氏名：<%= rs.getString("staff_name1")%></p>
+    <p>協力態度：<%= rs.getString("cooperation_attitude")%></p>
+    <p>保護者の性格的問題の経過状況：<%= rs.getString("personality_progress")%></p>
+    <p>保護者の精神的問題の経過状況：<%= rs.getString("mental_progress")%></p>
+    <p>子供への感情の変化：<%= rs.getString("emotional_changes")%></p>
+    <p>親の意見：<%= rs.getString("parental_opinion")%></p>
+    <p>当面の課題：<%= rs.getString("immediate_issues")%></p>
+    <p>今後の課題：<%= rs.getString("future_tasks")%></p>
+    <p>備考欄：<%= rs.getString("personality_remarks")%></p>
 <%
             }
 
@@ -60,10 +55,9 @@ public void jspInit() {
         }
 %>
 
-        </table>
 <form action="">
 <p>
-<input type = "submit" value = "戻る">
+<a href=/grad2021_groupA/InterviewRead>一覧へ</a>
 </p>
 </form>
 </body>

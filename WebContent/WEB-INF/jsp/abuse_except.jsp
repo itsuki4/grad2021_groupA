@@ -19,8 +19,7 @@ public void jspInit() {
 </head>
 
 <body>
-<P><font size="5">虐待以外の詳細</font></P>
-<table border='1'><tr><th>保護内容　　</th><th>児童ID　　</th><th>保護理由</th><th>今後の方向性</th><th>対象者の状況　　</th><th>現状と課題　　</th><th>備考論</th></tr>
+<p><font size="5">虐待以外の詳細</font></P>
 
 <%
         Connection con = null;
@@ -32,15 +31,14 @@ public void jspInit() {
 		    rs = stmt.executeQuery("select * from abuse_except");
             while (rs.next()) {
 %>
-    <tr>
-    <td><%= rs.getInt("person_protect")%></td>
-    <td><%= rs.getInt("person_id")%></td>
-    <td><%= rs.getInt("except_reason")%></td>
-    <td><%= rs.getInt("except_direction")%></td>
-    <td><%= rs.getInt("except_status")%></td>
-    <td><%= rs.getInt("except_task")%></td>
-    <td><%= rs.getString("except_remarks")%></td>
-    </tr>
+
+    <p>保護内容：<%= rs.getInt("person_protect")%></p>
+    <p>児童ID:<%= rs.getInt("person_id")%></p>
+    <p>保護理由：<%= rs.getInt("except_reason")%></p>
+    <p>今後の方向性：<%= rs.getInt("except_direction")%></p>
+    <p>対象者の状況<%= rs.getInt("except_status")%></p>
+    <p>現状と課題<%= rs.getInt("except_task")%></p>
+    <p>備考欄：<%= rs.getString("except_remarks")%></p>
 <%
             }
 
@@ -52,11 +50,9 @@ public void jspInit() {
             try { con.close(); } catch (Exception e) {}
         }
 %>
-
-        </table>
 <form action="">
 <p>
-<input type = "submit" value = "戻る">
+<a href=/grad2021_groupA/Person_Date_Main>戻る</a>
 </p>
 </form>
 </body>
