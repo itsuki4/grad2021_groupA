@@ -1,5 +1,5 @@
 //github連結のパスワード
-//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
+//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
 //1.26から30日限定
 package model;
 
