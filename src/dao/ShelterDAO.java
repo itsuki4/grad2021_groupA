@@ -154,8 +154,9 @@ public class ShelterDAO {
 
 
 	    		        String interview_date = rs.getString("interview_date");
+	    		        int shelter_send = rs.getInt("shelter_send");
 
-	    		        Shelter_chatList l = new  Shelter_chatList(id, shelter_comment,interview_date);
+	    		        Shelter_chatList l = new  Shelter_chatList(id, shelter_comment,interview_date,shelter_send);
 	    	          list.add(l);
 	    	        }
 	    	      } catch (NamingException | SQLException e) {
@@ -167,15 +168,13 @@ public class ShelterDAO {
 	    	    }
 
 
-	      public List<Shelter_Date> vacancySearch(String v){
+	      public List<Shelter_Date> vacancySearch(String v)throws Exception{
 	    	  List<Shelter_Date> list = new ArrayList<Shelter_Date>();
 	    	      try {
 	    	        this.connect();
 	    	        ps = db.prepareStatement("SELECT * FROM shelter_date where shelter_conditions like ?");
 	    	        ps.setString(1, "%"+ v +"%");
 	    	        rs = ps.executeQuery();
-
-
 
 
 	    	        while (rs.next()) {
@@ -200,6 +199,7 @@ public class ShelterDAO {
 	    	      }
 	    	      return list;
 	    	    }
+	    
 
 
 

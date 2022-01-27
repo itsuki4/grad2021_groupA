@@ -7,22 +7,57 @@
 <head>
 <meta charset="UTF-8">
 <title>施設のマイページ</title>
+<link rel="stylesheet" href="/grad2021_groupA/shelter_css/css/style.css">
 </head>
 <body>
-<h2>施設の情報</h2>
+<div id="contents">
+<div class="inner">
+<div id="main">
+<h2>マイページ</h2>
 
+<article><table class="ta1">
+<tr>
+<th>ID</th>
+<td><%=s.getId() %>
+</td></tr>
+<tr>
+<th>施設名</th>
+<td><%=s.getShelter_name1() %><br>
+</td></tr>
+<tr>
+<th>住所</th>
+<td>〒<%=s.getShelter_address1() %><br>
+<%=s.getShelter_address2() %><%=s.getShelter_address3() %>
+</td></tr>
+<tr>
+<th>電話番号</th>
+<td><%=s.getTel() %>
+</td></tr>
+<tr>
+<th>定員数</th>
+<td><%=s.getCapacity() %>
+</td></tr>
+<tr>
+<th>入所条件</th>
+<td><%=s.getShelter_conditions() %>
+</td></tr>
+<tr>
+<th>空き人数</th>
+<td><%=s.getShelter_vacancy() %>
+</td></tr>
+
+</table>
+</article>
 
 <form action="/grad2021_groupA/Shelter_changeServlet?id=<%=s.getId() %>" method="post">
-<p>ID：<%=s.getId() %></p>
-<h2>施設名：<%=s.getShelter_name1() %><br>　　　　<%=s.getShelter_name2() %></h2>
-<p>郵便番号：〒<%=s.getShelter_address1() %></p>
-<p>住所：<%=s.getShelter_address2() %><%=s.getShelter_address3() %><br>　　　　<%=s.getShelter_address4() %></p>
-<p>電話番号：<%=s.getTel() %></p>
-<p>定員数：<%=s.getCapacity() %></p>
-<p>入所条件：<%=s.getShelter_conditions() %></p>
-<p>空き人数：<%=s.getShelter_vacancy() %></p>
-<input type="submit"value="変更">
-
+<p align="center"><input type="submit"value="空き情報や入所条件の変更" class="btn"></p>
 </form>
+<h3>チャット</h3>
+<form action="/grad2021_groupA/ShelterCommentServlet?id=<%=s.getId() %>" method="post">
+						<p align="center"><input type="submit" value="問い合わせをする" class="btn"></p>
+						</form>
+</div>
+</div>
+</div>
 </body>
 </html>

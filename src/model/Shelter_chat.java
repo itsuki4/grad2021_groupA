@@ -6,6 +6,7 @@ public class Shelter_chat implements Serializable{
 	 private static final long serialVersionUID = 1L;
 	  private int shelter_id;
 	  private String shelter_comment;
+	  private int shelter_send;
 
 
 
@@ -18,6 +19,10 @@ public class Shelter_chat implements Serializable{
 	    return shelter_comment;
 	  }
 
+	  public int getShelter_send() {
+		    return shelter_send;
+		  }
+
 
 
 	  public void setShelter_id(int shelter_id) {
@@ -26,5 +31,8 @@ public class Shelter_chat implements Serializable{
 
 	  public void setShelter_comment(String shelter_comment) {
 		  this.shelter_comment = shelter_comment;
+	  }
+	  public void setShelter_send(int shelter_send) {
+		  this.shelter_send = shelter_send;
 	  }
 }

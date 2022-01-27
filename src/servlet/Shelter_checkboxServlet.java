@@ -62,7 +62,7 @@ public class Shelter_checkboxServlet extends HttpServlet {
         		"\r\n" +
         		"<section>\r\n" +
         		"\r\n" +
-        		"<h2>施設一覧ページ</h2>" +
+        		"<h2>施設一覧</h2>" +
         		"\r\n" +
         		"<h3>" +prefecture+"</h3>"
         		);

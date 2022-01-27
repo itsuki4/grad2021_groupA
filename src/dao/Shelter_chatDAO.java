@@ -18,15 +18,15 @@ public class Shelter_chatDAO {
 
         try (Connection con = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS)) {
 
-            String sql = "INSERT INTO sheltercomment (shelter_id, shelter_comment) VALUES (?, ?)";
+            String sql = "INSERT INTO sheltercomment (shelter_id, shelter_comment, shelter_send) VALUES (?, ?, ?)";
             PreparedStatement ps= con.prepareStatement(sql);
 
             ps.setInt(1, ab.getShelter_id());
             ps.setString(2, ab.getShelter_comment());
+            ps.setInt(3, ab.getShelter_send());
 
-            
-          
-            
+
+
 
             int r = ps.executeUpdate();
 

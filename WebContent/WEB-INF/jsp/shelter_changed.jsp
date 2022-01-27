@@ -7,17 +7,37 @@
 <head>
 <meta charset="UTF-8">
 <title>変更完了</title>
+<link rel="stylesheet" href="/grad2021_groupA/shelter_css/css/style.css">
 </head>
 <body>
-<h2>変更しました</h2>
-<p>ID：<%=s.getId() %></p>
-<h2>施設名：<%=s.getShelter_name1() %><br>　　　　<%=s.getShelter_name2() %></h2>
-<p>郵便番号：〒<%=s.getShelter_address1() %></p>
-<p>住所：<%=s.getShelter_address2() %><%=s.getShelter_address3() %><br>　　　　<%=s.getShelter_address4() %></p>
-<p>電話番号：<%=s.getTel() %></p>
-<p><font color="red">定員数：<%=s.getCapacity() %></font></p>
-<p><font color="red">入所条件：<%=s.getShelter_conditions() %></font></p>
-<p><font color="red">空き人数：<%=s.getShelter_vacancy() %></font></p>
+<table border="1" width="500px">
 
+</table>
+<div id="contents">
+<div class="inner">
+<div id="main">
+<table class="ta1">
+<tr><td align="center">変更しました</td></tr>
+</table>
+<article><table class="ta1">
+
+<tr>
+<th>定員数</th>
+<td><%=s.getCapacity() %>
+</td></tr>
+<tr>
+<th>入所条件</th>
+<td><%=s.getShelter_conditions() %>
+</td></tr>
+<tr>
+<th>空き人数</th>
+<td><%=s.getShelter_vacancy() %>
+</td></tr>
+
+</table>
+</article>
+</div>
+</div>
+</div>
 </body>
 </html>

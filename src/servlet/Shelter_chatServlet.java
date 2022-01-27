@@ -54,8 +54,8 @@ public class Shelter_chatServlet extends HttpServlet {
         response.setContentType("text/html; charset=UTF-8");
 
 
-        out.println("<!DOCTYPE html><html><head><title>検索結果の一覧</title></head><body>");//[7]
-        out.println("詳細情報");
+        out.println("<!DOCTYPE html><html><head><title>検索結果の一覧</title><link rel=\"stylesheet\" href=\"/grad2021_groupA/shelter_css/css/chat.css\"></head><body>");//[7]
+
 
 
         try {
@@ -84,21 +84,39 @@ public class Shelter_chatServlet extends HttpServlet {
 
 //		      out.println("<h2>chat</h2>");
 		    	out.println("<p><font color=\"red\">※緊急の場合は電話でのご連絡をお願い致します。お返事にお時間がかかる場合がございます。</p></font>");
-		      ShelterDAO Sdao =new ShelterDAO();
+		        out.println("<font color=\"blue\">コメント出来ました。</font>");
+		    	ShelterDAO Sdao =new ShelterDAO();
 				List<Shelter_chatList> Slist=Sdao.Shelter_chat(shelter_id);
 
-				for (Shelter_chatList semp : Slist) {
-			    	out.println(" <br><br>");
+//				https://saruwakakun.com/html-css/reference/speech-bubble
 
-			      out.println("ID:" + semp.getShelter_id() + "<br>");
-			      out.println("コメント" + semp.getShelter_comment() + "<br>");
-			      out.println("投稿時間：" + semp.getInterview_date()+ "<br>");
+				for (Shelter_chatList semp : Slist) {
+			    	
+			    	out.println(" <br><br><div class=\"line-bc\">");
+
+			    	if(semp.getShelter_send() == semp.getShelter_id()) {
+				    	out.println("<p class=\"balloon1-left\">");
+//				      out.println("ID:" + semp.getShelter_id() + "<br>");
+				      out.println(semp.getShelter_comment() + "<br>");
+				      out.println(semp.getInterview_date()+ "<br>");
+				      out.println("</p>");
+				    	}else {
+				    		out.println("<p class=\"balloon1-right\">");
+//						      out.println("ID:" + semp.getShelter_id() + "<br>");
+						      out.println(semp.getShelter_comment() + "<br>");
+						      out.println( semp.getInterview_date());
+//						      out.println( semp.getShelter_send() + "<br>");
+						      out.println("</p>");
+						      
+				    	}
+			    	out.println("</div>");
 
 				}
 		      out.println("<form action=\"/grad2021_groupA/Shelter_chatServlet\" method=\"post\">" +
 		      		"<h3>入力してください</h3>" +
 		      		"　　　送りたい施設のID："+ emp.getId() +"<input type=\"hidden\" name=\"shelter_id\" value=\""+ emp.getId() +"\"><br>"+
 		      		"コメント：<input type=\"text\" name=\"shelter_comment\"><br>\r\n" +
+		      		"自分の施設のID：<input type=\"hidden\" name=\"shelter_send\" value=\"1000\"><br> "+
 		      		"<input type=\"submit\" value=\"送信\"><br>" +
 		      		"</form>");
 

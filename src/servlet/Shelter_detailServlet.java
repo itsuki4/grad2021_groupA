@@ -43,8 +43,9 @@ public class Shelter_detailServlet extends HttpServlet {
 						"<div id=\"contents\">" + 
 						"<div class=\"inner\">" +
 						"<div id=\"main\">" + 
+						"<h2>施設一覧</h2>"+
 						"<article><table class=\"ta1\">" + 
-						"<caption>施設概要</caption>" + 
+						"<caption></caption>" + 
 						"<tr>" + 
 						"<th>施設名</th>" + 
 						"<td>" + emp.getShelter_name1() + "</td>" + 

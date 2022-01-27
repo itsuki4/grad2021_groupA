@@ -5,14 +5,19 @@
 <head>
 <meta charset="UTF-8">
 <title>入所条件の検索</title>
+<link rel="stylesheet" href="/grad2021_groupA/shelter_css/css/style.css">
 </head>
 <body>
-
+<div id="contents">
+<div class="inner">
+<div id="main">
+<h2>条件の検索</h2>
 <form action="/grad2021_groupA/ShelterVacancyServlet" method="get">
 <input type="text" name="vacancy">
-<input type="submit" value="送信する" >
+<input type="submit" value="検索" >
 </form>
-
+<br>
+<h2>複数の条件検索</h2>
 <form action="/grad2021_groupA/ShelterVacancyServlet" method="get">
 <article><table class="ta1">
 <tr>
@@ -32,10 +37,12 @@
 </td></tr>
 
 </table>
-<br><input type="submit" value="送信する">
+<br><input type="submit" value="検索">
 </article>
 </form>
-
+</div>
+</div>
+</div>
 
 </body>
 </html>

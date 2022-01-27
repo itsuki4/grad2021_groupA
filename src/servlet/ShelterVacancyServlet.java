@@ -31,10 +31,18 @@ public class ShelterVacancyServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		request.setCharacterEncoding("Shift_JIS");
-		String v = request.getParameter("vacancy");
+		String tmps[] = request.getParameterValues("vacancy");
+		String vacancy = "";
 		int tax =0;
+		if (tmps != null){
+		      for (int i = 0 ; i < tmps.length ; i++){
+		    	  vacancy += tmps[i];
+		    	  vacancy += " ";
+		      }
+		    }else{
+		    	vacancy = "選択していません。";
+		    }
 		PrintWriter out = response.getWriter();
-		out.println(v);
 		out.println("<!DOCTYPE html><html><head><title>検索結果の一覧</title>"
         		+ "<link rel=\"stylesheet\" href=\"/grad2021_groupA/shelter_css/css/style.css\">\r\n" +
         		"<script src=\"/grad2021_groupA/shelter_css/js/openclose.js\"></script>" +
@@ -57,12 +65,16 @@ public class ShelterVacancyServlet extends HttpServlet {
         		"\r\n" +
         		"<h2>施設一覧ページ</h2>" +
         		"\r\n" +
-        		"<h3>" +v+"</h3>"
+        		"<h3>" +vacancy+"</h3>"
         		);
+        for(int i=0; i< tmps.length; i++) {
+        	vacancy = tmps[i];
 		
-		try {
-		ShelterDAO dao =new ShelterDAO();
-			List<Shelter_Date> list=dao.vacancySearch(v);
+		
+			
+			try {
+				ShelterDAO dao =new ShelterDAO();
+ 			List<Shelter_Date> list=dao.vacancySearch(vacancy);
 
 			for (Shelter_Date emp : list) {
 
@@ -107,12 +119,14 @@ public class ShelterVacancyServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
+        }
 		out.println("<h1 style=\"text-align: right\">合計空き人数<font color=\"red\">" +tax + "</font>人</h1>");
 
 		out.println("</div></div></div></div>");
       out.println("</body></html>");
 
 	}
+	
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

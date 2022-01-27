@@ -7,24 +7,39 @@
 <head>
 <meta charset="UTF-8">
 <title>空き情報の編集</title>
+<link rel="stylesheet" href="/grad2021_groupA/shelter_css/css/style.css">
 </head>
 <body>
-<h2>空き情報を編集してください。</h2>
+<div id="contents">
+<div class="inner">
+<div id="main">
+<h3>空き情報を変更してください。</h3>
 <form action="/grad2021_groupA/Shelter_updateServlet?id=<%=s.getId() %>" method="post">
-<p>ID：<%=s.getId() %></p>
-<h2>施設名：<%=s.getShelter_name1() %><br>　　　　<%=s.getShelter_name2() %></h2>
-<p>郵便番号：〒<%=s.getShelter_address1() %></p>
-<p>住所：<%=s.getShelter_address2() %><%=s.getShelter_address3() %><br>　　　　<%=s.getShelter_address4() %></p>
-<p>電話番号：<%=s.getTel() %></p>
-<p><input type="hidden" name="shelter_id" value="<%=s.getId() %>"></p>
-<p>定員数：<input type="text" name="capacity"  value="<%=s.getCapacity() %>"></p>
-<p>入所条件：<input type="text" name="shelter_conditions" value="<%=s.getShelter_conditions()%>"></p>
-<p>空き人数：<input type="text" name="shelter_vacancy" value="<%=s.getShelter_vacancy() %>"></p>
-<input type="submit"value="変更">
+<input type="hidden" name="shelter_id" value="<%=s.getId() %>">
+<article><table class="ta1">
+<tr>
+<th>定員数</th>
+<td><input type="text" name="capacity"  value="<%=s.getCapacity() %>">
+</td></tr>
+<tr>
+<th>入所条件</th>
+<td><input type="text" name="shelter_conditions" value="<%=s.getShelter_conditions()%>">
+</td></tr>
+<tr>
+<th>空き人数</th>
+<td><input type="text" name="shelter_vacancy" value="<%=s.getShelter_vacancy() %>">
+</td></tr>
 
+
+
+</table>
+</article>
+<input type="submit"value="変更">
 </form>
 
-
+</div>
+</div>
+</div>
 
 
 <a href="/grad2021_groupA/Shelter_mypageServlet?id=<%=s.getId() %>">戻る</a>
