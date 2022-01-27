@@ -18,6 +18,6 @@ public class Person_Delete extends HttpServlet {
       PersonDAO dao=new PersonDAO();
       dao.deleteOne(Integer.parseInt(s_id));
     }
-    response.sendRedirect("PersonRead");
+    response.sendRedirect("Read");
   }
 }

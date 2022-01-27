@@ -16,12 +16,12 @@ import person_date_model.Person;
 public class Person_Update extends HttpServlet {
   private static final long serialVersionUID = 1L;
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    String person_id=request.getParameter("id");
-    if(person_id == null){
-    	response.sendRedirect("/grad2021_groupA/PersonRead");
+    String s_id=request.getParameter("id");
+    if(s_id == null){
+    	response.sendRedirect("/grad2021_groupA/Read");
     }else{
       PersonDAO dao=new PersonDAO();
-      Person person=dao.findOne(Integer.parseInt(person_id));
+      Person person=dao.findOne(Integer.parseInt(s_id));
       request.setAttribute("person", person);
       RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/jsp/person_update.jsp");
       rd.forward(request, response);
@@ -30,27 +30,27 @@ public class Person_Update extends HttpServlet {
   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	  request.setCharacterEncoding("Shift_JIS");
 		response.setContentType("text/html; charset=Windows-31J");
-		int person_id=Integer.parseInt(request.getParameter("person_id"));
+		int person_id = Integer.parseInt(request.getParameter("person_id"));
 		String person_name1 = request.getParameter("person_name1");
 		String person_name2 = request.getParameter("person_name2");
-		String person_birthday =request.getParameter("person_birthday");
-		String person_address1=request.getParameter("person_address1");
-		String person_address2=request.getParameter("person_address2");
-		String person_address3=request.getParameter("person_address3");
-		String person_address4=request.getParameter("person_address4");
-		String acceptance=request.getParameter("acceptance");
-		String person_status=request.getParameter("person_status");
-		String person_protect=request.getParameter("person_protect");
-		String person_parent1=request.getParameter("person_parent1");
-		String person_parent2=request.getParameter("person_parent2");
+		String person_birthday = request.getParameter("person_birthday");
+		String person_address1 = request.getParameter("person_address1");
+		String person_address2 = request.getParameter("person_address2");
+		String person_address3 = request.getParameter("person_address3");
+		String person_address4 = request.getParameter("person_address4");
+		String acceptance = request.getParameter("acceptance");
+		String person_status = request.getParameter("person_status");
+		String person_protect = request.getParameter("person_protect");
+		String person_parent1 =request.getParameter("person_parent1");
+		String person_parent2 = request.getParameter("person_parent2");
 		String parent_job = request.getParameter("parent_job");
-		String parent_phone =request.getParameter("parent_phone");
-		String brother1=request.getParameter("brother1");
-		String brother2=request.getParameter("brother2");
-		String parent_ok=request.getParameter("parent_ok");
-		String person_remarks=request.getParameter("person_remarks");
-		String person_gender=request.getParameter("person_gender");
-			PrintWriter out=response.getWriter();
+		String parent_phone = request.getParameter("parent_phone");
+		String brother1 = request.getParameter("brother1");
+		String brother2 = request.getParameter("brother2");
+		String parent_ok = request.getParameter("parent_ok");
+		String person_remarks =request.getParameter("person_remarks");
+		String person_gender = request.getParameter("person_gender");
+			PrintWriter out = response.getWriter();
 
 
 			 out.println("更新しました。");
@@ -104,6 +104,6 @@ public class Person_Update extends HttpServlet {
 				dao.insertOne(ab);
 
 
-		response.sendRedirect("/grad2021_groupA/PersonRead");
+		response.sendRedirect("/grad2021_groupA/Read");
   }
 }

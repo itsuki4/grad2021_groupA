@@ -104,6 +104,6 @@ public class Person_Create extends HttpServlet {
 				dao.insertOne(ab);
 
 
-		response.sendRedirect("/grad2021_groupA/PersonRead");
+		response.sendRedirect("/grad2021_groupA/Read");
 	}
 }
