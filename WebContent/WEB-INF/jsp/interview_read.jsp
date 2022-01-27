@@ -19,7 +19,7 @@ List<Interview> List = (List<Interview>) request.getAttribute("List");
 <%if(List != null && List.size() > 0){ %>
 
 
-<table border='1'><tr><th>児童氏名</th><th>面談実施日　　</th><th>スタッフ名</th>
+<table class="table table-striped"><tr><th>児童氏名</th><th>面談実施日　　</th><th>スタッフ名</th>
 
 <%for(Interview ps:List){ %>
 

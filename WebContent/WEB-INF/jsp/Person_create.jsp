@@ -12,7 +12,7 @@
 </head>
 <body>
 <form action="/grad2021_groupA/Person_Create" method="post">
-<table class="row">
+<table class="row" >
 <tr><th align="left">　　児童ID</th><td><input type="text" name="person_id" ></td></tr>
 <tr><th align="left">　　児童氏名</th><td><input type="text" name="person_name1"></td></tr>
 <tr><th align="left">　　児童氏名（カタカナ）</th><td><input type="text" name="person_name2"></td></tr>

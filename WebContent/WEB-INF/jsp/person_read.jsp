@@ -20,7 +20,7 @@ List<Person> List = (List<Person>) request.getAttribute("List");
 <%if(List != null && List.size() > 0){ %>
 
 
-<table border='1' ><tr><th>児童氏名</th><th>児童氏名　（カタカナ)　　</th><th>生年　月日</th><th>性別</th>
+<table class="table table-striped" ><tr><th>児童氏名</th><th>児童氏名　（カタカナ)　　</th><th>生年　月日</th><th>性別</th>
                   <th>郵便　番号</th><th>都道府県</th><th>市町村</th><th>市町村（カタカナ）</th>
 <%for(Person ps:List){ %>
 
