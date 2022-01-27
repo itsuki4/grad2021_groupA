@@ -22,12 +22,12 @@ public class InterviewUpdate extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		 String s_id=request.getParameter("id");
-		    if(s_id == null){
+		 String person_id=request.getParameter("id");
+		    if(person_id == null){
 		    	response.sendRedirect("/grad2021_groupA/InterviewRead");
 		    }else{
 		      InterviewDAO dao=new InterviewDAO();
-		      Interview interview=dao.findOne(Integer.parseInt(s_id));
+		      Interview interview=dao.findOne(Integer.parseInt(person_id));
 		      request.setAttribute("interview", interview);
 		      RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/jsp/interview_update.jsp");
 		      rd.forward(request, response);
