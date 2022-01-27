@@ -1,6 +1,6 @@
 //github連結のパスワード
-//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
-//1.26から30日限定
+//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
+//1.27から30日限定
 package model;
 
 public class Health {
