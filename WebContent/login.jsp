@@ -8,8 +8,8 @@ try {
 Class.forName("com.mysql.jdbc.Driver");
 } catch (Exception e) {
 e.printStackTrace();
-}
-}
+}         
+}                                                         
 %><!DOCTYPE html>
 <html>
 <head>
