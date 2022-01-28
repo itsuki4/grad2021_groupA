@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
 <title>空き情報住所検索</title>
 <link rel="stylesheet" href="/grad2021_groupA/shelter_css/css/style.css">
+<%@ include file="baseNavber.jsp" %>
 
 </head>
 <body>
@@ -154,6 +155,6 @@
 
  -->
 
-
+<%@ include file="basefooter.jsp" %>
 </body>
 </html>

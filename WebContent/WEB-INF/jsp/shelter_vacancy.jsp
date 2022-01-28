@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>入所条件の検索</title>
 <link rel="stylesheet" href="/grad2021_groupA/shelter_css/css/style.css">
+
 </head>
 <body>
 <div id="contents">

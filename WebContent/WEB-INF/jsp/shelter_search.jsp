@@ -6,12 +6,14 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+
+<%@ include file="baseNavber.jsp" %>
 
 <a href="/grad2021_groupA/Shelter_mypageServlet?id=2000">2001マイページへ</a>
 <a href="/grad2021_groupA/Shelter_mypageServlet?id=2001">2002マイページへ</a>
 <a href="/grad2021_groupA/shelter_addServlet">都道府県検索</a>
 <a href="/grad2021_groupA/shelterConditionServlet">条件検索</a>
 
+<%@ include file="basefooter.jsp" %>
 </body>
 </html>
