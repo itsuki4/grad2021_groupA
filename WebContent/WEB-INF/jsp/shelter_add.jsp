@@ -87,7 +87,7 @@
 <input type="checkbox" name="prefecture" id="okinawa" value="沖縄"><label for="Okinawa">沖縄県</label>
 </td></tr>
 </table>
-<br><input type="submit" value="送信する">
+<br><input type="submit" value="検索">
 </article>
 </form>
 </div>
