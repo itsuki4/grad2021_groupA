@@ -8,12 +8,18 @@
 <meta charset="UTF-8">
 <title>施設のマイページ</title>
 <link rel="stylesheet" href="/grad2021_groupA/shelter_css/css/style.css">
+<%@ include file="baseNavber.jsp" %>
 </head>
 <body>
+ <div class="container-fluid px-4">
+                        <h1 class="mt-4">マイページ</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active">施設の情報/マイページ</li>
+                        </ol>
+                        </div>
 <div id="contents">
 <div class="inner">
 <div id="main">
-<h2>マイページ</h2>
 
 <article><table class="ta1">
 <tr>
@@ -58,5 +64,7 @@
 </div>
 </div>
 </div>
+
+<%@ include file="basefooter.jsp" %>
 </body>
 </html>

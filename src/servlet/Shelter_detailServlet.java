@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.ShelterDAO;
 import model.Shelter_Date;
+import tool.Page;
 
 
 @WebServlet("/Shelter_detailServlet")
@@ -26,7 +27,13 @@ public class Shelter_detailServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.println("<!DOCTYPE html><html><head><link rel=\"stylesheet\" href=\"/grad2021_groupA/shelter_css/css/style.css\"><title>検索結果の一覧</title></head><body>");
 
-
+		Page.header(out);
+		out.println("<div class=\"container-fluid px-4\">\r\n" + 
+				"                        <h1 class=\"mt-4\">施設の詳細</h1>\r\n" + 
+				"                        <ol class=\"breadcrumb mb-4\">\r\n" + 
+				"                            <li class=\"breadcrumb-item active\">空き情報/施設の詳細</li>\r\n" + 
+				"                        </ol>\r\n" + 
+				"                        </div>");
         try {
 			ShelterDAO dao =new ShelterDAO();
 			List<Shelter_Date> list=dao.ShelterDetail(id);
@@ -119,7 +126,7 @@ public class Shelter_detailServlet extends HttpServlet {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		}
-
+        Page.footer(out);
         out.println("</body></html>");
 
 //		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/shelter_date.jsp");

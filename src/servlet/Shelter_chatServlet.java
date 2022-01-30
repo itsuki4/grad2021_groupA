@@ -15,6 +15,7 @@ import dao.Shelter_chatDAO;
 import model.Shelter_Date;
 import model.Shelter_chat;
 import model.Shelter_chatList;
+import tool.Page;
 
 
 @WebServlet("/Shelter_chatServlet")
@@ -55,8 +56,13 @@ public class Shelter_chatServlet extends HttpServlet {
 
 
         out.println("<!DOCTYPE html><html><head><title>検索結果の一覧</title><link rel=\"stylesheet\" href=\"/grad2021_groupA/shelter_css/css/chat.css\"></head><body>");//[7]
-
-
+        Page.header(out);
+        out.println("<div class=\"container-fluid px-4\">\r\n" + 
+				"                        <h1 class=\"mt-4\">問い合わせ</h1>\r\n" + 
+				"                        <ol class=\"breadcrumb mb-4\">\r\n" + 
+				"                            <li class=\"breadcrumb-item active\">施設の詳細/お問い合わせ</li>\r\n" + 
+				"                        </ol>\r\n" + 
+				"                        </div>");
 
         try {
 			ShelterDAO dao =new ShelterDAO();
@@ -125,7 +131,7 @@ public class Shelter_chatServlet extends HttpServlet {
 
 			}
 
-			
+			Page.footer(out);
 
 			out.println("</body></html>");
 		} catch (Exception e) {

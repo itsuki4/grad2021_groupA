@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html;  charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="model.*,java.util.*" %>
 <!DOCTYPE html>
 <html>
@@ -6,9 +6,15 @@
 <meta charset="UTF-8">
 <title>入所条件の検索</title>
 <link rel="stylesheet" href="/grad2021_groupA/shelter_css/css/style.css">
-
+<%@ include file="baseNavber.jsp" %>
 </head>
 <body>
+<div class="container-fluid px-4">
+                        <h1 class="mt-4">条件検索</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active">条件検索</li>
+                        </ol>
+                        </div>
 <div id="contents">
 <div class="inner">
 <div id="main">
@@ -45,6 +51,6 @@
 </div>
 </div>
 </div>
-
+<%@ include file="basefooter.jsp" %>
 </body>
 </html>

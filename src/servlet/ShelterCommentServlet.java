@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import dao.ShelterDAO;
 import model.Shelter_Date;
 import model.Shelter_chatList;
+import tool.Page;
 
 
 @WebServlet("/ShelterCommentServlet")
@@ -31,7 +32,13 @@ public class ShelterCommentServlet extends HttpServlet {
 		int id = Integer.parseInt(request.getParameter("id"));
 		PrintWriter out = response.getWriter();
 		out.println("<!DOCTYPE html><html><head><link rel=\"stylesheet\" href=\"/grad2021_groupA/shelter_css/css/chat.css\"><title>検索結果の一覧</title></head><body>");
-
+		Page.header(out);
+		out.println("<div class=\"container-fluid px-4\">\r\n" + 
+				"                        <h1 class=\"mt-4\">問い合わせ</h1>\r\n" + 
+				"                        <ol class=\"breadcrumb mb-4\">\r\n" + 
+				"                            <li class=\"breadcrumb-item active\">施設の詳細/お問い合わせ</li>\r\n" + 
+				"                        </ol>\r\n" + 
+				"                        </div>");
         try {
 			ShelterDAO dao =new ShelterDAO();
 			List<Shelter_Date> list=dao.ShelterDetail(id);
@@ -83,7 +90,7 @@ public class ShelterCommentServlet extends HttpServlet {
 			}
 
 
-
+			Page.footer(out);
 			out.println("</body></html>");
 		} catch (Exception e) {
 			// TODO 自動生成された catch ブロック

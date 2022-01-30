@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=Windows-31J"
     pageEncoding="UTF-8"%>
     
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
@@ -74,4 +74,4 @@
             </div>
                         <div id="layoutSidenav_content">
                 <main>
-                    
+                   

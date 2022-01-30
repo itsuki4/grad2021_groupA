@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.ShelterDAO;
 import model.Shelter_Date;
+import tool.Page;
 
 /**
  * Servlet implementation class ShelterVacancyServlet
@@ -54,6 +55,13 @@ public class ShelterVacancyServlet extends HttpServlet {
         		"<script src=\"https://oss.maxcdn.com/respond/1.4.2/respond.min.js\"></script>\r\n" +
         		"<![endif]-->"
         		+ "</head><body>");//[7]
+		Page.header(out);
+		out.println("<div class=\"container-fluid px-4\">\r\n" + 
+				"                        <h1 class=\"mt-4\">空き情報</h1>\r\n" + 
+				"                        <ol class=\"breadcrumb mb-4\">\r\n" + 
+				"                            <li class=\"breadcrumb-item active\">空き情報/施設の詳細</li>\r\n" + 
+				"                        </ol>\r\n" + 
+				"                        </div>");
         out.println(
         		"<div id=\"contents\">" +
         		"\r\n" +
@@ -120,11 +128,12 @@ public class ShelterVacancyServlet extends HttpServlet {
 		}
 		
         }
-		out.println("<h1 style=\"text-align: right\">合計空き人数<font color=\"red\">" +tax + "</font>人</h1>");
+		out.println("<h3 style=\"text-align: right\">合計空き人数<font color=\"red\">" +tax + "</font>人</h3>");
 
 		
 		out.println("<a href=\"/grad2021_groupA/shelter_addServlet\">都道府県検索へ</a><br>" + 
 				"<a href=\"/grad2021_groupA/shelterConditionServlet\">戻る</a></div></div></div></div>");
+		Page.footer(out);
       out.println("</body></html>");
 
 	}

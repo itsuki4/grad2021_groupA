@@ -9,13 +9,17 @@ List<Person> List = (List<Person>) request.getAttribute("List");
 <head>
 <meta charset="UTF-8"/>
 <title>詳細一覧</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-<link rel="stylesheet" type="text/css" href="/grad2021_groupA/css/style.css">
+
 
 </head>
 <body>
+<%@ include file="baseNavber.jsp" %>
+ <div class="container-fluid px-4">
+                        <h1 class="mt-4">児童の詳細情報</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active">児童の詳細情報</li>
+                        </ol>
+                        </div>
 <a href="/grad2021_groupA/Person_Create">新規登録</a>
 <%if(List != null && List.size() > 0){ %>
 
@@ -45,5 +49,6 @@ List<Person> List = (List<Person>) request.getAttribute("List");
 </table>
 
 <%} %>
+<%@ include file="basefooter.jsp" %>
 </body>
 </html>

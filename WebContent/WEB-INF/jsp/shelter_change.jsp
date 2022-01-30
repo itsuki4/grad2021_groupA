@@ -8,8 +8,15 @@
 <meta charset="UTF-8">
 <title>空き情報の編集</title>
 <link rel="stylesheet" href="/grad2021_groupA/shelter_css/css/style.css">
+<%@ include file="baseNav.jsp" %>
 </head>
 <body>
+ <div class="container-fluid px-4">
+                        <h1 class="mt-4">空き情報の編集</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active">施設の情報/マイページ/空き情報の編集</li>
+                        </ol>
+                        </div>
 <div id="contents">
 <div class="inner">
 <div id="main">
@@ -43,5 +50,6 @@
 
 
 <a href="/grad2021_groupA/Shelter_mypageServlet?id=<%=s.getId() %>">戻る</a>
+<%@ include file="basefooter.jsp" %>
 </body>
 </html>
