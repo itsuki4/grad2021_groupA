@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html;  charset=Windows-31J" pageEncoding="UTF-8"
-import="interview_model.*"%>
+<%@ page language="java" contentType="text/html; charset=Windows-31J"
+    pageEncoding="UTF-8"%>
+<%@page import="interview_model.*"%>
 <% Interview interview=(Interview)request.getAttribute("interview");%>
 <!DOCTYPE html>
 <html>
@@ -8,6 +9,13 @@ import="interview_model.*"%>
 <title>面談内容の追加</title>
 <link rel="stylesheet" href="/grad2021_groupA/css/style.css">
 <body>
+<%@ include file="baseNav.jsp" %>
+<div class="container-fluid px-4">
+                        <h1 class="mt-4">面談内容の追加</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active">面談内容/面談内容の追加</li>
+                        </ol>
+                        </div>
 <form action="/grad2021_groupA/InterviewCreate" method="post">
 <table class="row">
 <tr><th align="left">　　職員ID</th><td><input type="text" name="staff_id" ></td></tr>
@@ -43,6 +51,6 @@ import="interview_model.*"%>
 
 <button type="submit">更新</button>
 </form>
-
+<%@ include file="basefooter.jsp" %>
 </body>
 </html>

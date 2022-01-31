@@ -1,4 +1,5 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@page import="java.sql.*"%>
 <%!
 public void jspInit() {
@@ -19,6 +20,13 @@ public void jspInit() {
 </head>
 
 <body>
+<%@ include file="baseNavber.jsp" %>
+ <div class="container-fluid px-4">
+                        <h1 class="mt-4">児童の詳細情報</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active">児童の詳細情報</li>
+                        </ol>
+                        </div>
 <P><font size="5">児童の詳細</font></P>
 <%
         Connection con = null;
@@ -66,5 +74,6 @@ public void jspInit() {
 <a href=/grad2021_groupA/Read>一覧へ</a>
 
 </form>
+<%@ include file="basefooter.jsp" %>
 </body>
 </html>

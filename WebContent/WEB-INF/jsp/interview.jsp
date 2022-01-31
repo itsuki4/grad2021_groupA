@@ -1,4 +1,5 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@page import="java.sql.*"%>
 <%!
 public void jspInit() {
@@ -15,10 +16,17 @@ public void jspInit() {
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>面談内容</title>
-<link rel="stylesheet" type="text/css" href="/grad2021_groupA/css/style.css">
+
 </head>
 
 <body>
+<%@ include file="baseNavber.jsp" %>
+<div class="container-fluid px-4">
+                        <h1 class="mt-4">面談内容の詳細</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active">面談内容/面談内容の詳細</li>
+                        </ol>
+                        </div>
 <P><font size="5">面談内容</font></P>
 <%
         Connection con = null;
@@ -60,5 +68,6 @@ public void jspInit() {
 <a href=/grad2021_groupA/InterviewRead>一覧へ</a>
 </p>
 </form>
+<%@ include file="basefooter.jsp" %>
 </body>
 </html>

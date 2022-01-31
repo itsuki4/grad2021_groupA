@@ -19,9 +19,9 @@
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 
                         <li><a class="dropdown-item" href="/grad2021_groupA/Shelter_mypageServlet?id=2000">mypage2000</a></li>
-                        <li><a class="dropdown-item" href="/grad2021_groupA/Shelter_mypageServlet?id=2001">mypage2001</a></li>
+                       <!--  <li><a class="dropdown-item" href="/grad2021_groupA/Shelter_mypageServlet?id=2001">mypage2001</a></li> -->
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="#!">Logout</a></li>
+                        <li><a class="dropdown-item" href="/grad2021_groupA/testC">Logout</a></li>
                     </ul>
                 </li>
             </ul>
@@ -32,7 +32,7 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">core</div>
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="/grad2021_groupA/testB">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 home
                             </a>
@@ -56,8 +56,8 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="/grad2021_groupA/InterviewRead">Intervew</a>
-                                    <a class="nav-link" href="/grad2021_groupA/Read">Person</a>
+                                    <a class="nav-link" href="/grad2021_groupA/InterviewRead">面談内容</a>
+                                    <a class="nav-link" href="/grad2021_groupA/PersonRead">児童の詳細情報</a>
                                 </nav>
         
                             </div>
@@ -67,8 +67,8 @@
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
-                        <div class="small">Logged in as:</div>
-                        Start Bootstrap
+                        <div class="small">     </div>
+                       
                     </div>
                 </nav>
             </div>

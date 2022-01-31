@@ -50,15 +50,17 @@ public class Shelter_checkboxServlet extends HttpServlet {
         		"<![endif]-->");//[7]
 //        out.print("　" + prefecture);//[9]
 //        out.println("検索中</p>");//[11]
+
         Page.header(out);
+        
 
 
         out.println("</head><body>");
-        out.println("<div class=\"container-fluid px-4\">\r\n" + 
-        		"                        <h1 class=\"mt-4\">空き情報</h1>\r\n" + 
-        		"                        <ol class=\"breadcrumb mb-4\">\r\n" + 
-        		"                            <li class=\"breadcrumb-item active\">都道府県検索/空き情報</li>\r\n" + 
-        		"                        </ol>\r\n" + 
+        out.println("<div class=\"container-fluid px-4\">\r\n" +
+        		"                        <h1 class=\"mt-4\">空き情報</h1>\r\n" +
+        		"                        <ol class=\"breadcrumb mb-4\">\r\n" +
+        		"                            <li class=\"breadcrumb-item active\">都道府県検索/空き情報</li>\r\n" +
+        		"                        </ol>\r\n" +
         		"                        </div>");
         out.println(
         		"<div id=\"contents\">" +
@@ -152,7 +154,7 @@ public class Shelter_checkboxServlet extends HttpServlet {
 
         out.println("<h3 style=\"text-align: right\">合計空き人数<font color=\"red\">" +tax + "</font>人</h3>");
 
-        out.println("<a href=\"/grad2021_groupA/shelter_addServlet\">戻る</a><br>" + 
+        out.println("<a href=\"/grad2021_groupA/shelter_addServlet\">戻る</a><br>" +
         		"<a href=\"/grad2021_groupA/shelterConditionServlet\">条件検索へ</a>");
 			out.println("</div></div></div></div>");
 			Page.footer(out);
