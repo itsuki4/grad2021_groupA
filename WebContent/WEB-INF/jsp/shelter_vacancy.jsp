@@ -36,7 +36,9 @@
 </td></tr>
 <tr><th>
 <h3>学校</h3></th>
-<td><input type="checkbox" name="vacancy" class="ibaraki" value="幼稚園"><label for="Ibaraki">幼稚園</label>
+<td>
+<input type="checkbox" name="vacancy" class="ibaraki" value="乳児"><label for="Ibaraki">乳児</label>
+<input type="checkbox" name="vacancy" class="ibaraki" value="幼稚園"><label for="Ibaraki">幼稚園</label>
 <input type="checkbox" name="vacancy" class="totigi" value="保育園"><label for="Totigi">保育園</label>
 <input type="checkbox" name="vacancy" class="gunma" value="小学生"><label for="Gunma">小学生</label>
 <input type="checkbox" name="vacancy" class="saitama" value="中学生"><label for="Saitama">中学生</label>
