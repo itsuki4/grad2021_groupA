@@ -20,7 +20,7 @@ public class AccountRegisterDAO {
 
 		  try (Connection con = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS)) {
 
-            String sql = "INSERT INTO account (loginId, pass, name, roleId) VALUES (?, ?, ?, ?)";
+            String sql = "INSERT INTO account (loginid, pass, name, roleid) VALUES (?, ?, ?, ?)";
             PreparedStatement ps= con.prepareStatement(sql);
 
             ps.setString(1, ab.getLoginId());

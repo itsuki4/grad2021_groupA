@@ -1,9 +1,8 @@
 package login_model;
 
-import java.io.Serializable;
 
-public class AccountBeans implements Serializable {
-	 private static final long serialVersionUID = 1L;
+
+public class AccountBeans{
 
     private String loginId;
     private String pass;

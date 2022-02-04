@@ -55,12 +55,16 @@ public class AccountRegister extends HttpServlet {
         ab.setLoginId(loginId);
         ab.setPass(pass);
         ab.setRole(role);
+        
+        
 
 //        PrintWriter out = response.getWriter();
 //        out.println(name);
+//        out.println(loginId);
+//        out.println(pass);
+//        out.println(role);
 
         // アカウントをDBに登録
-//        AccountRegisterDAO ard = new AccountRegisterDAO(ab);
         AccountRegisterDAO ard = new AccountRegisterDAO(ab);
 
         // セッションにアカウント情報を保存
