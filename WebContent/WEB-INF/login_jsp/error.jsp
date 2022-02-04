@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+ログインに失敗しました。<br>
+<a href="/grad2021_groupA/Logout"><button>ログインページへ</button></a>
 </body>
 </html>
