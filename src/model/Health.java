@@ -1,7 +1,13 @@
+<<<<<<< HEAD
 //なんかのパスワード↓
 //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
 
 
+=======
+//github連結のパスワード
+//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
+//1.27から30日限定
+>>>>>>> branch 'miyu' of https://github.com/itsuki4/grad2021_groupA
 package model;
 
 public class Health {
