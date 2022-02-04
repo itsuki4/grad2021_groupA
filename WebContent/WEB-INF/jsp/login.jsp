@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>管理者ログイン</title>
+<title>管理者ログイン画面</title>
 </head>
 <body>
 <form action="/grad2021_groupA/LoginServlet" method="post">

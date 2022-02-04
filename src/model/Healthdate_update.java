@@ -1,9 +1,6 @@
 package model;
 
-import java.io.Serializable;
-
-public class  Health_date implements Serializable {
-
+public class Healthdate_update {
 	private int person_id; //児童ID
 	private int person_body; //身長
 	private int person_check; //体重
@@ -29,10 +26,10 @@ public class  Health_date implements Serializable {
 	private String scratch_remarks; //傷の備考欄
 	private int hindrance; //障害の有無
 	private String person_remarks; //児童の備考欄
-	private String create_data; //記入日
 
+	public Healthdate_update() {};
 
-	public Health_date(int person_id,int person_body,
+	public Healthdate_update(int person_id,int person_body,
 	int person_check,
 	int person_datail,
 	String allergies,
@@ -55,8 +52,8 @@ public class  Health_date implements Serializable {
 	int scratch_colour,
 	String scratch_remarks,
 	int hindrance,
-	String person_remarks,
-	String create_data)
+	String person_remarks)
+
 	{
 		this.person_id = person_id;
 		this.person_body = person_body;
@@ -83,7 +80,6 @@ public class  Health_date implements Serializable {
 		this.scratch_remarks = scratch_remarks;
 		this.hindrance = hindrance;
 		this.person_remarks = person_remarks;
-		this.create_data = create_data;
 		}
 
 	public int getPerson_id() {return person_id; }
@@ -111,7 +107,6 @@ public class  Health_date implements Serializable {
 	public String getScratch_remarks() {return scratch_remarks; }
 	public int getHindrance() {return hindrance; }
 	public String getPerson_remarks() {return person_remarks; }
-	public String getCreate_data() {return create_data; }
 
 
 	public void setPerson_id(int person_id) { this.person_id = person_id;}
@@ -139,5 +134,5 @@ public class  Health_date implements Serializable {
 	public void setScratch_remarks(String scratch_remarks) { this.scratch_remarks = scratch_remarks; }
 	public void setHindrance(int hindrance) { this.hindrance = hindrance; }
 	public void setPerson_remarks(String person_remarks) { this.person_remarks = person_remarks; }
-	public void setCreate_data(String create_data) { this.create_data = create_data; }
-}
+	}
+

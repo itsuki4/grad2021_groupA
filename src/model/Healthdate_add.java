@@ -1,8 +1,6 @@
 package model;
 
-import java.io.Serializable;
-
-public class  Health_date implements Serializable {
+public class Healthdate_add {
 
 	private int person_id; //児童ID
 	private int person_body; //身長
@@ -29,35 +27,34 @@ public class  Health_date implements Serializable {
 	private String scratch_remarks; //傷の備考欄
 	private int hindrance; //障害の有無
 	private String person_remarks; //児童の備考欄
-	private String create_data; //記入日
 
+	public Healthdate_add() {};
 
-	public Health_date(int person_id,int person_body,
-	int person_check,
-	int person_datail,
-	String allergies,
-	int allergies_degree,
-	String allergies_remarks,
-	String chronic_condition,
-	String chronic_correspondence,
-	int insomnia,
-	int frightened,
-	int depression,
-	String mental_remarks,
-	int suicide,
-	int dehydration,
-	int malnutrition,
-	int unbalanced_diet,
-	String unbalanced_remarks,
-	String 	scratch_point,
-	int scratch_number,
-	int scratch_size,
-	int scratch_colour,
-	String scratch_remarks,
-	int hindrance,
-	String person_remarks,
-	String create_data)
-	{
+	public Healthdate_add(int person_id,int person_body,
+			int person_check,
+			int person_datail,
+			String allergies,
+			int allergies_degree,
+			String allergies_remarks,
+			String chronic_condition,
+			String chronic_correspondence,
+			int insomnia,
+			int frightened,
+			int depression,
+			String mental_remarks,
+			int suicide,
+			int dehydration,
+			int malnutrition,
+			int unbalanced_diet,
+			String unbalanced_remarks,
+			String 	scratch_point,
+			int scratch_number,
+			int scratch_size,
+			int scratch_colour,
+			String scratch_remarks,
+			int hindrance,
+			String person_remarks) {
+
 		this.person_id = person_id;
 		this.person_body = person_body;
 		this.person_check = person_check;
@@ -83,9 +80,7 @@ public class  Health_date implements Serializable {
 		this.scratch_remarks = scratch_remarks;
 		this.hindrance = hindrance;
 		this.person_remarks = person_remarks;
-		this.create_data = create_data;
-		}
-
+	}
 	public int getPerson_id() {return person_id; }
 	public int getPerson_body() {return person_body; }
 	public int getPerson_check() {return person_check; }
@@ -111,7 +106,6 @@ public class  Health_date implements Serializable {
 	public String getScratch_remarks() {return scratch_remarks; }
 	public int getHindrance() {return hindrance; }
 	public String getPerson_remarks() {return person_remarks; }
-	public String getCreate_data() {return create_data; }
 
 
 	public void setPerson_id(int person_id) { this.person_id = person_id;}
@@ -139,5 +133,6 @@ public class  Health_date implements Serializable {
 	public void setScratch_remarks(String scratch_remarks) { this.scratch_remarks = scratch_remarks; }
 	public void setHindrance(int hindrance) { this.hindrance = hindrance; }
 	public void setPerson_remarks(String person_remarks) { this.person_remarks = person_remarks; }
-	public void setCreate_data(String create_data) { this.create_data = create_data; }
+
+
 }

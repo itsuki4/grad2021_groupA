@@ -1,6 +1,6 @@
 package servlet;
 
-//メイン画面サーブレット
+//詳細画面（ID検索してる）サーブレット
 import java.io.IOException;
 import java.util.List;
 
@@ -12,11 +12,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.Health_dateDAO;
-import model.Health;
 import model.Health_date;
 
-@WebServlet("/Browsing")
-public class Browsing extends HttpServlet {
+
+@WebServlet("/BrowsingDetailServlet")
+public class BrowsingDetailServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 
@@ -26,22 +26,11 @@ public class Browsing extends HttpServlet {
 
 		request.setCharacterEncoding("Shift_JIS");
 
-		Health_dateDAO dao = new Health_dateDAO();
-		List<Health> List = dao.HealthAll();
-
-	 	request.setAttribute("List", List);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/browsing.jsp");
-		dispatcher.forward(request, response);
-		}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		response.setContentType("text/html; charset=Windows-31J");
-
-		request.setCharacterEncoding("Shift_JIS");
+		int id =Integer.parseInt(request.getParameter("id"));
 
 		Health_dateDAO dao = new Health_dateDAO();
-		List<Health_date> healthList = dao.findAll();
+		List<Health_date> healthList = dao.HealthDetail(id);
+
 		for (Health_date date : healthList) {
 			date.getPerson_id();
 			date.getPerson_body();
@@ -74,4 +63,13 @@ public class Browsing extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/browsing_date.jsp");
 		dispatcher.forward(request, response);
 		}
+
+
+//	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+//			throws ServletException, IOException {
+//
+//
+//		}
 	}
+
+

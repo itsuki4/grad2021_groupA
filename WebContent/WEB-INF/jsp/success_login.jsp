@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>管理者</title>
+<title>ログイン成功</title>
 </head>
 <body>
 <p>ようこそ</p>
