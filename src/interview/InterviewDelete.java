@@ -13,10 +13,10 @@ import interview_dao.InterviewDAO;
 public class InterviewDelete extends HttpServlet {
   private static final long serialVersionUID = 1L;
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    String s_id=request.getParameter("id");
-    if(s_id != null){
+    String person_id=request.getParameter("id");
+    if(person_id != null){
       InterviewDAO dao=new InterviewDAO();
-      dao.deleteOne(Integer.parseInt(s_id));
+      dao.deleteOne(Integer.parseInt(person_id));
     }
     response.sendRedirect("InterviewRead");
   }

@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import person_date_dao.PersonDAO;
 import person_date_model.Person;
-@WebServlet("/Read")
+@WebServlet("/PersonRead")
 public class PersonRead extends HttpServlet {
   private static final long serialVersionUID = 1L;
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

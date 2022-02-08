@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"
 import="interview_model.*,java.util.*"%>
+<%@ page import="javax.servlet.http.*,javax.servlet.*"%>
 <%
 List<Interview> List = (List<Interview>) request.getAttribute("List");
 %>

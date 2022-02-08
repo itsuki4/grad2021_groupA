@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"
-import="person_date_model.*,java.util.*"%>
+import="abuse_except_model.*,java.util.*"%>
 <%
-List<Person> List = (List<Person>) request.getAttribute("List");
+List<AbuseExcept> List = (List<AbuseExcept>) request.getAttribute("List");
 %>
 <!DOCTYPE html>
 <html>
@@ -20,39 +20,35 @@ List<Person> List = (List<Person>) request.getAttribute("List");
 
 
 <table class="table table-striped" >
-<%for(Person ps:List){ %>
+<%for(AbuseExcept ps:List){ %>
 
 <tr>
 <th>児童ID</th>
 <td><%=ps.getperson_id() %></td>
 </tr>
 <tr>
-<th>児童氏名</th>
-<td><%=ps.getperson_name1()%></td>
-<td><%=ps.getperson_name2()%></td>
+<th>保護内容</th>
+<td><%=ps.getperson_protect()%></td>
 </tr>
 <tr>
-<th>生年月日</th>
-<td><%=ps.getperson_birthday()%> </td>
+<th>保護理由</th>
+<td><%=ps.getexcept_reason()%> </td>
 </tr>
 <tr>
-<th>性別<th>
-<td><%=ps.getperson_gender() %></td>
+<th>今後の方向性<th>
+<td><%=ps.getexcept_direction() %></td>
 </tr>
 <tr>
-<th>住所</th>
-<td>〒<%=ps.getperson_address1()%> </td>
-<td><%=ps.getperson_address2()%></td>
-<td><%=ps.getperson_address3()%></td>
-<td><%=ps.getperson_address4()%></td>
+<th>対象者の状況</th>
+<td><%=ps.getexcept_status()%> </td>
 </tr>
 <tr>
-<th>受理日</th>
-<td><%=ps.getacceptance() %></td>
+<th>現状と課題</th>
+<td><%=ps.getexcept_task() %></td>
 </tr>
 <tr>
-<th>就学状況</th>
-<td><%=ps.getperson_status() %></td>
+<th>備考欄</th>
+<td><%=ps.getexcept_remarks() %></td>
 </tr>
 
 

@@ -163,7 +163,11 @@ public class PersonDAO {
 			        e.printStackTrace();
 			    }
 		  }
+
+
+
+		public List<Person> Person(int person_id) {
+			// TODO 自動生成されたメソッド・スタブ
+			return null;
+		}
 }
-
-
-

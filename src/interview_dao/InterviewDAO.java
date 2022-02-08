@@ -95,7 +95,7 @@ public class InterviewDAO {
 		public Interview findOne(int person_id){
 			try(Connection conn = DriverManager.getConnection(JDBC_URL,DB_USER,DB_PASS)) {
 
-				String sql ="SELECT FROM interview_content WHERE Person_id=?";
+				String sql ="SELECT FROM interview_content WHERE person_id=?";
 	            PreparedStatement ps = conn.prepareStatement(sql);
 
 	        ps.setInt(1, person_id);
@@ -142,7 +142,7 @@ public class InterviewDAO {
 		  public void deleteOne(int person_id){
 			      try (Connection conn = DriverManager.getConnection(JDBC_URL,DB_USER,DB_PASS)) {
 
-						String sql ="DELETE FROM interview_content WHERE Person_id=?";
+						String sql ="DELETE FROM interview_content WHERE person_id=?";
 						PreparedStatement ps = conn.prepareStatement(sql);
 			        ps.setInt(1, person_id);
 			        ps.executeUpdate();
