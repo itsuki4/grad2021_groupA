@@ -199,7 +199,7 @@ public class ShelterDAO {
 	    	      }
 	    	      return list;
 	    	    }
-	    
+
 
 
 

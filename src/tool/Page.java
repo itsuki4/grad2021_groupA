@@ -23,7 +23,7 @@ public class Page {
 				"                    <ul class=\"dropdown-menu dropdown-menu-end\" aria-labelledby=\"navbarDropdown\">\r\n" +
 				"\r\n" +
 				"                        <li><a class=\"dropdown-item\" href=\"/grad2021_groupA/Shelter_mypageServlet?id=2000\">mypage2000</a></li>\r\n" +
-				
+
 				"                        <li><hr class=\"dropdown-divider\" /></li>\r\n" +
 				"                        <li><a class=\"dropdown-item\" href=\"/grad2021_groupA/testC\">Logout</a></li>\r\n" +
 				"                    </ul>\r\n" +
@@ -49,7 +49,7 @@ public class Page {
 				"                            <div class=\"collapse\" id=\"collapseLayouts\" aria-labelledby=\"headingOne\" data-bs-parent=\"#sidenavAccordion\">\r\n" +
 				"                                <nav class=\"sb-sidenav-menu-nested nav\">\r\n" +
 				"                                    <a class=\"nav-link\" href=\"/grad2021_groupA/shelter_addServlet\">都道府県検索</a>\r\n" +
-				"                                    <a class=\"nav-link\" href=\"/grad2021_groupA/shelterConditionServlet\">情報検索</a>\r\n" +
+				"                                    <a class=\"nav-link\" href=\"/grad2021_groupA/shelterConditionServlet\">条件検索</a>\r\n" +
 				"                                </nav>\r\n" +
 				"        \r\n" +
 				"                            </div>\r\n" +

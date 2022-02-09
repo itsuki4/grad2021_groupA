@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import login_dao.AccountRegisterDAO;
-import login_model.AccountBeans;
+import login_model.AccountSerch;
 
 /**
  * Servlet implementation class AccountRegister
@@ -44,17 +44,21 @@ public class AccountRegister extends HttpServlet {
     	request.setCharacterEncoding("UTF-8");
 		request.setCharacterEncoding("Shift_JIS");
 		response.setContentType("text/html; charset=Windows-31J");
-    	String name = request.getParameter("name");
-        String loginId = request.getParameter("loginId");
-        String pass = request.getParameter("pass");
-        int role = Integer.parseInt(request.getParameter("role"));
-
+		int shelter_id = Integer.parseInt(request.getParameter("shelter_id"));
+		String staff_pass = request.getParameter("staff_pass");
+        String staff_name1 = request.getParameter("staff_name1");
+        String staff_name2 = request.getParameter("staff_name2");
+        int staff_role = Integer.parseInt(request.getParameter("staff_role"));
+        int admin_role = Integer.parseInt(request.getParameter("admin_role"));
+        
         // register.jspから受け取った値をビーンズにセット
-        AccountBeans ab = new AccountBeans();
-        ab.setName(name);
-        ab.setLoginId(loginId);
-        ab.setPass(pass);
-        ab.setRole(role);
+        AccountSerch ab = new AccountSerch();
+        ab.setShelter_id(shelter_id);
+        ab.setStaff_pass(staff_pass);
+        ab.setStaff_name1(staff_name1);
+        ab.setStaff_name2(staff_name2);
+        ab.setStaff_role(staff_role);
+        ab.setAdmin_role(admin_role);
         
         
 

@@ -8,6 +8,6 @@
 </head>
 <body>
 ログインが成功しました!
-<p><a href="/login/AccountCheck"><button type="button" name="aaa" >ユーザー or 管理者ページへ</button></a></p>
+<p><a href="/grad2021_groupA/AccountCheck"><button type="button" name="aaa" >ユーザー or 管理者ページへ</button></a></p>
 </body>
 </html>

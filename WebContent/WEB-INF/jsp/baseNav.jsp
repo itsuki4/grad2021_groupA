@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=Windows-31J"
     pageEncoding="UTF-8"%>
-    
+
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="base_css/css/styles.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
@@ -11,7 +11,7 @@
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
-          
+
             <!-- Navbar-->
             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                 <li class="nav-item dropdown">
@@ -45,9 +45,9 @@
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="/grad2021_groupA/shelter_addServlet">都道府県検索</a>
-                                    <a class="nav-link" href="/grad2021_groupA/shelterConditionServlet">情報検索</a>
+                                    <a class="nav-link" href="/grad2021_groupA/shelterConditionServlet">条件検索</a>
                                 </nav>
-        
+
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
@@ -59,19 +59,18 @@
                                     <a class="nav-link" href="/grad2021_groupA/InterviewRead">面談内容</a>
                                     <a class="nav-link" href="/grad2021_groupA/PersonRead">児童の詳細情報</a>
                                 </nav>
-        
+
                             </div>
-                            
-                            
-                           
+
+
+
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">     </div>
-                       
+
                     </div>
                 </nav>
             </div>
                         <div id="layoutSidenav_content">
                 <main>
-                   

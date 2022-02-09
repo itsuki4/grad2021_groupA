@@ -27,19 +27,9 @@ public class LoginServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 response.setContentType("text/html; charset=Windows-31J");
-		 
-		int id = Integer.parseInt(request.getParameter("id"));
-		if(id == 1000) {
-			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/shelter1_index.jsp");
-			dispatcher.forward(request, response);
-		}else if(id == 2000) {
-			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/shlter2_index.jsp");
-			dispatcher.forward(request, response);
-		}
-		
-		
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/login.jsp");
+		dispatcher.forward(request, response);
 	}
 
 	/**

@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import login_model.AccountBeans;
+import login_model.AccountSerch;
 
 /**
  * Servlet implementation class AccountCheck
@@ -38,13 +38,13 @@ public class AccountCheck extends HttpServlet {
 		request.setCharacterEncoding("Shift_JIS");
 		response.setContentType("text/html; charset=Windows-31J");
         HttpSession session = request.getSession();
-        AccountBeans ab = (AccountBeans) session.getAttribute("account");
+        AccountSerch ab = (AccountSerch) session.getAttribute("account");
 
         // ロールでフォワード先を振り分ける
-        if(ab.getRole() == 1) {
+        if(ab.getStaff_role() == 1) {
             RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/login_jsp/admin.jsp");
             rd.forward(request, response);
-        } else if(ab.getRole() == 2) {
+        } else if(ab.getStaff_role() == 2) {
             RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/login_jsp/user.jsp");
             rd.forward(request, response);
         } else {

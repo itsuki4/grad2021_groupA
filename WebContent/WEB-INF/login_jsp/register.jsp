@@ -11,12 +11,19 @@
 <form action="/grad2021_groupA/AccountRegister" method="post">
 <p>すべて入力してください</p>
 <p>
-<input type="radio" name="role" value="1">管理者で登録する
-<input type="radio" name="role" value="2" checked>ユーザーで登録する
+<input type="radio" name="staff_role" value="1">児童相談所
+<input type="radio" name="staff_role" value="2" checked>一時保護所で登録する
 </p>
-　　　名前：<input type="text" name="name" required><br>
-ユーザーID：<input type="text" name="loginId" required><br>
-パスワード：<input type="password" name="pass" required><br>
+<p>
+<h2>管理者権限をあたえますか？</h2>
+
+<input type="radio" name="admin_role" value="1">管理者
+<input type="radio" name="admin_role" value="2" checked>職員で登録する
+</p>
+　施設ID：<input type="text" name="shelter_id" required><br>
+　　　名前：<input type="text" name="staff_name1" required><br>
+　　　名前(カタカナ)：<input type="text" name="staff_name2" required><br>
+パスワード：<input type="password" name="staff_pass" required><br>
 <input type="submit" value="登録"><br>
 </form>
 </body>

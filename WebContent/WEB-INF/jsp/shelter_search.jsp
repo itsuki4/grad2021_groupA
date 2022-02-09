@@ -13,6 +13,7 @@
 <a href="/grad2021_groupA/Shelter_mypageServlet?id=2001">2002マイページへ</a>
 <a href="/grad2021_groupA/shelter_addServlet">都道府県検索</a>
 <a href="/grad2021_groupA/shelterConditionServlet">条件検索</a>
+<a href="/grad2021_groupA/Login_registerServlet">新規会員登録</a>
 
 <%@ include file="basefooter.jsp" %>
 </body>

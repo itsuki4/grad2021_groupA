@@ -1,16 +1,17 @@
-package login_dao;
+package dao;
+
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import login_model.AccountLogin;
+import model.AccountLogin;
 
 public class AccountLoginDAO {
 	public AccountLoginDAO(AccountLogin ab) {
 
-    	final String JDBC_URL =
+		final String JDBC_URL =
 		          "jdbc:mySQL://localhost/GroupA";
 		  final String DB_USER = "root";
 		  final String DB_PASS = "";
@@ -32,9 +33,9 @@ public class AccountLoginDAO {
             int r = ps.executeUpdate();
 
             if(r != 0) {
-                System.out.println("コメントに成功( *´艸｀)！");
+                System.out.println("新規追加に成功( *´艸｀)！");
             } else {
-                System.out.println("コメントに失敗( ﾉД`)ｼｸｼｸ…");
+                System.out.println("新規追加に失敗( ﾉД`)ｼｸｼｸ…");
             }
 
         } catch (SQLException e) {

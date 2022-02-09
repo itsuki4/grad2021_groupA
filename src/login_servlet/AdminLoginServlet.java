@@ -14,34 +14,33 @@ import login_dao.AccountDAO;
 import login_model.AccountSerch;
 
 /**
- * Servlet implementation class AccountDAO2
+ * Servlet implementation class AdminLoginServlet
  */
-@WebServlet("/AccountSearch")
-public class AccountSearch extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-
+@WebServlet("/AdminLoginServlet")
+public class AdminLoginServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AccountSearch() {
+    public AdminLoginServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-    /**
-     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-     */
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // TODO Auto-generated method stub
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		 RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/login_jsp/admin_login.jsp");
+	        rd.forward(request, response);
+	}
 
-    }
-
-    /**
-     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-     */
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // TODO Auto-generated method stub
-    	response.setContentType("text/html; charset=Windows-31J");
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html; charset=Windows-31J");
     	int staff_id = Integer.parseInt(request.getParameter("staff_id"));
         String staff_pass = request.getParameter("staff_pass");
 
@@ -63,12 +62,13 @@ public class AccountSearch extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("account", returnAb);
 
-            RequestDispatcher rd = request.getRequestDispatcher("/AccountCheck");
+            RequestDispatcher rd = request.getRequestDispatcher("/AdminCheck");
             rd.forward(request, response);
 
         } else {
             RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/login_jsp/error.jsp");
             rd.forward(request, response);
         }
-    }
+	}
+
 }

@@ -88,32 +88,7 @@ public class Shelter_detailServlet extends HttpServlet {
 						"</p></div></div></div></article>");
 				
 
-//		      out.println("Google Mapで地図を埋め込みたい場合は<a href=\"https://template-party.com/file/pickup_googlemap.html\">マニュアル</a>をご覧下さい。<br>\r\n" +
-//		      		"<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3232.557350712538!2d139.98235201461145!3d35.88436302641335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60189da9c22bc6cb%3A0xb6171bb07b20e488!2z5Y2D6JGJ55yM5p-P5YWQ56ul55u46KuH5omA!5e0!3m2!1sja!2sjp!4v1643091890216!5m2!1sja!2sjp\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>" +
-//		      		"");
 
-//		      out.println("<a href=\"/grad2021_groupA/shelter_addServlet\">戻る</a>");
-
-
-//		      ShelterDAO Sdao =new ShelterDAO();
-//				List<Shelter_chatList> Slist=Sdao.Shelter_chat(id);
-//
-//				out.println("<h2>chat</h2>");
-//		    	out.println("<p><font color=\"red\">※緊急の場合は電話でのご連絡をお願い致します。お返事にお時間がかかる場合がございます。</p></font>");
-//				for (Shelter_chatList semp : Slist) {
-//			    	out.println(" <br><br>");
-//
-//			      out.println("ID:" + semp.getShelter_id() + "<br>");
-//			      out.println("コメント:" + semp.getShelter_comment() + "<br>");
-//			      out.println("投稿時間：" + semp.getInterview_date()+ "<br>");
-//
-//				}
-//		      out.println("<form action=\"/grad2021_groupA/Shelter_chatServlet\" method=\"post\">" +
-//		      		"<h3>入力してください</h3>" +
-//		      		"<input type=\"hidden\" name=\"shelter_id\" value=\""+ emp.getId() +"\"><br>"+
-//		      		"コメント：<input type=\"text\" name=\"shelter_comment\"><br>\r\n" +
-//		      		"<input type=\"submit\" value=\"送信\"><br>" +
-//		      		"</form>");
 
 			}
 

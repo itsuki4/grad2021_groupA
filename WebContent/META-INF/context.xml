@@ -4,7 +4,7 @@
 name="jdbc/jsp"
 auth="Container"
 type="javax.sql.DataSource"
-driverClassName="com.mysql.jdbc.Driver"
+driverClassName="com.mysql.cj.jdbc.Driver"
 url="jdbc:mySQL://localhost/GroupA"
 connectionProperties="autoReconnect=true;verifyServerCertificate=false;useSSL=false;requireSSL=false"
 username="root"
