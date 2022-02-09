@@ -16,12 +16,13 @@ List<Person> List = (List<Person>) request.getAttribute("List");
 
 </head>
 <body>
-<%if(List != null && List.size() > 0){ %>
-
-
-<table class="table table-striped" >
 <%for(Person ps:List){ %>
-
+<div id="contents">
+<div class="inner">
+<div id="main">
+<h2>詳細ページ</h2>
+<article>
+<table class="table table-striped" >
 <tr>
 <th>児童ID</th>
 <td><%=ps.getperson_id() %></td>
@@ -36,7 +37,7 @@ List<Person> List = (List<Person>) request.getAttribute("List");
 <td><%=ps.getperson_birthday()%> </td>
 </tr>
 <tr>
-<th>性別<th>
+<th>性別</th>
 <td><%=ps.getperson_gender() %></td>
 </tr>
 <tr>
@@ -54,12 +55,40 @@ List<Person> List = (List<Person>) request.getAttribute("List");
 <th>就学状況</th>
 <td><%=ps.getperson_status() %></td>
 </tr>
-
-
-
-<%} %>
+<tr>
+<th>保護内容</th>
+<td><%=ps.getperson_protect() %></td>
+</tr>
+<tr>
+<th>保護者名</th>
+<td><%=ps.getperson_parent1() %></td>
+<td><%=ps.getperson_parent2() %></td>
+</tr>
+<tr>
+<th>保護者の職業</th>
+<td><%=ps.getparent_job() %></td>
+</tr>
+<tr>
+<th>保護者の電話</th>
+<td><%=ps.getparent_phone() %></td>
+</tr>
+<tr>
+<th>兄弟の名前（続柄）</th>
+<td><%=ps.getbrother1() %></td>
+<td><%=ps.getbrother2() %></td>
+</tr>
+<tr>
+<th>保護者の了解</th>
+<td><%=ps.getperson_remarks() %></td>
+</tr>
 </table>
+</article>
+</div>
+</div>
+</div>
+
 
 <%} %>
+
 </body>
 </html>
