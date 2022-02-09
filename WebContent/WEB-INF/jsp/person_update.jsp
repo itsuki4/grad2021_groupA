@@ -16,7 +16,7 @@ Person person=(Person)request.getAttribute("person");
 
 </head>
 <body>
-<form action="/grad2021_groupA/Person_Update%>" method="post">
+<form action="/grad2021_groupA/Person_Update" method="post">
 <table class="row">
 <tr><th align="left">　　住所</th><td></td></tr>
 <tr><th align="left">　　郵便番号</th><td><input type="text" name="person_address1"value="<%=person.getperson_address1() %>"></td></tr>

@@ -1,5 +1,9 @@
-<%@ page language="java" contentType="text/html;  charset=Windows-31J" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" import="abuse_except_model.*"%>
 
+<%
+AbuseExcept abuse=(AbuseExcept)request.getAttribute("abuse");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,8 +17,7 @@
 <body>
 <form action="/grad2021_groupA/Abuse_ExceptCreate" method="post">
 <table class="row" >
-<tr><th align="left">　　児童ID</th><td><input type="text" name="person_id"></td></tr>
-<tr><th align="left">　　保護内容</th><td><select name="person_protect" >
+<tr><th align="left">　　保護内容</th><td><select name="person_protect">
           <option value="非行">非行</option>
           <option value="家庭環境">家庭環境</option>
           <option value="社会的養護">社会的養護</option>
@@ -46,8 +49,10 @@
           <option value="悪化">悪化</option>
           </select></td></tr>
 <tr><th align="left">　　備考欄</th><td><textarea name="except_remarks" rows=”10″ cols=”100″  wrap="soft"></textarea></td></tr>
+
 </table>
-<button type="submit">登録</button>
+<input type="hidden" name="person_id"value="<%=abuse.getperson_id() %>" ><br>
+<button type="submit">更新</button>
 </form>
 
 </body>

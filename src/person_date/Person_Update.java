@@ -59,7 +59,7 @@ public class Person_Update extends HttpServlet {
     PersonUpdateDAO dao=new PersonUpdateDAO();
     dao.updateOne(person);
 
-    response.sendRedirect("/grad2021_groupA/PersonRead");
+    response.sendRedirect("PersonRead");
   }
 
 }

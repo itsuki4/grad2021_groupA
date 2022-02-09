@@ -29,7 +29,7 @@ List<Interview> List = (List<Interview>) request.getAttribute("List");
 <td><%=ps.getperson_name1()%></td>
 <td><%= ps.getinterview_date()%></td>
 <td><%= ps.getstaff_name1()%></td>
-<td><a href="/grad2021_groupA/Interview_Main">児童詳細</a></td>
+<td><a href="/grad2021_groupA/Interview_Main?id=<%=ps.getperson_id()%>">児童詳細</a></td>
 <td><a href="/grad2021_groupA/InterviewUpdate?id=<%=ps.getperson_id()%>">更新</a>
 <a href="/grad2021_groupA/InterviewDelete?id=<%=ps.getperson_id()%>" onclick="return confirm('id=<%=ps.getperson_id()%>を削除してよろしいですか？');">削除</a></td>
 
