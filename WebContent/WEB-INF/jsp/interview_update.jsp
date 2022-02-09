@@ -10,8 +10,8 @@ import="interview_model.*"%>
 <body>
 <form action="/grad2021_groupA/InterviewCreate" method="post">
 <table class="row">
-<tr><th align="left">　　職員ID</th><td><input type="text" name="staff_id" ></td></tr>
-<tr><th align="left">　　職員名</th><td><input type="text" name="staff_name1"></td></tr>
+<tr><th align="left">　　職員ID</th><td><input type="text" name="staff_id" value="<%=interview.getstaff_id() %>"></td></tr>
+<tr><th align="left">　　職員名</th><td><input type="text" name="staff_name1"value="<%=interview.getstaff_name1() %>"></td></tr>
 <tr><th align="left">　　協力態度</th><td><select name="cooperation_attitude">
           <option value="はい">はい</option>
           <option value="やや">やや</option>
@@ -34,12 +34,12 @@ import="interview_model.*"%>
           <option value="変化なし">変化なし</option>
           <option value="悪化">悪化</option>
           </select></td></tr>
-<tr><th align="left">　　親の意見</th><td><input type="text" name="parental_opinion"></td></tr>
-<tr><th align="left">　　当面の課題</th><td><input type="text" name="immediate_issues"></td></tr>
-<tr><th align="left">　　今後の方針</th><td><input type="text" name="future_tasks"></td></tr>
+<tr><th align="left">　　親の意見</th><td><input type="text" name="parental_opinion"value="<%=interview.getparental_opinion() %>"></td></tr>
+<tr><th align="left">　　当面の課題</th><td><input type="text" name="immediate_issues"value="<%=interview.getimmediate_issues() %>"></td></tr>
+<tr><th align="left">　　今後の方針</th><td><input type="text" name="future_tasks"value="<%=interview.getfuture_tasks() %>"></td></tr>
 <tr><th align="left">　　備考欄</th><td><textarea name="personality_remarks" rows=”10″ cols=”100″  wrap="soft"></textarea></td></tr>
 </table>
-<input type="hidden" name="person_id"><br>
+<input type="hidden" name="person_id"value="<%=interview.getperson_id() %>"><br>
 
 <button type="submit">更新</button>
 </form>

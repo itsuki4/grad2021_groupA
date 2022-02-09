@@ -25,7 +25,7 @@ public class InterviewUpdate extends HttpServlet {
       InterviewUpdateDAO dao=new InterviewUpdateDAO();
       Interview interview=dao.findOne(Integer.parseInt(person_id));
       request.setAttribute("interview", interview);
-      RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/jsp/abuse_exceptupdate.jsp");
+      RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/jsp/interview_update.jsp");
       rd.forward(request, response);
     }
   }
