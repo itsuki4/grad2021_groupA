@@ -8,7 +8,7 @@
 <title>新規登録</title>
 </head>
 <body>
-<form action="/grad2021_groupA/AccountRegister" method="post">
+<form action="/grad2021_groupA/AccountRegisterJs" method="post">
 <p>すべて入力してください</p>
 <p>
 <input type="radio" name="staff_role" value="1">児童相談所
@@ -16,7 +16,6 @@
 </p>
 <p>
 <h2>管理者権限をあたえますか？</h2>
-
 <input type="radio" name="admin_role" value="1">管理者
 <input type="radio" name="admin_role" value="2" checked>職員で登録する
 </p>

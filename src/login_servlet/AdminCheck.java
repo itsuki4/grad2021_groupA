@@ -43,9 +43,9 @@ public class AdminCheck extends HttpServlet {
         // ロールでフォワード先を振り分ける
         if(ab.getAdmin_role() == 1) {
 
-        	int role = 1;
+//        	int role = 1;
         	 AdminDAO dao=new AdminDAO();
-     	    List<Account> list=dao.StaffAll(role);
+     	    List<Account> list=dao.StaffAll();
      	   request.setAttribute("List", list);
             RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/login_jsp/admin_success.jsp");
             rd.forward(request, response);

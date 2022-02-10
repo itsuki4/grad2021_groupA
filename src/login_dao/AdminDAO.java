@@ -45,12 +45,12 @@ public class AdminDAO {
 
 
 
-	      public List<Account> StaffAll(int role) {
+	      public List<Account> StaffAll() {
 	    	  List<Account> list = new ArrayList<Account>();
 	    	      try {
 	    	        this.connect();
-	    	        ps = db.prepareStatement("SELECT * FROM staff_user where staff_role like ?");
-	    	        ps.setInt(1, role);
+	    	        ps = db.prepareStatement("SELECT * FROM staff_user");
+//	    	        ps.setInt(1, role);
 	    	        rs = ps.executeQuery();
 	    	        while (rs.next()) {
 	    	        	int staff_id = rs.getInt("staff_id");
