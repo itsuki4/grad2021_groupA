@@ -40,6 +40,8 @@ public class AccountCheck extends HttpServlet {
         HttpSession session = request.getSession();
         AccountSerch ab = (AccountSerch) session.getAttribute("account");
 
+
+
         // ロールでフォワード先を振り分ける
         if(ab.getStaff_role() == 1) {
             RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/login_jsp/admin.jsp");
