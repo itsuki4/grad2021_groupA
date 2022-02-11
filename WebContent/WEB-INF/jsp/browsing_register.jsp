@@ -12,6 +12,13 @@ Health_date date = (Health_date)request.getAttribute("date");
 <link rel= "stylesheet" type= "text/css" href= "/grad2021_groupA/css/style.css">
 </head>
 <body>
+<%@ include file="baseNavber.jsp" %>
+ <div class="container-fluid px-4">
+                        <h1 class="mt-4">健康状態記録</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active">健康状態記録</li>
+                        </ol>
+                        </div>
 <p><font size="4">健康状態記録を追加しました</font></p>
 
 <p>児童ID：<%= date.getPerson_id() %></p>
@@ -192,7 +199,12 @@ if (date.getHindrance() == 1){
 </p>
 <p>児童の備考欄：<%= date.getPerson_remarks() %></p>
 <p>記入日：<%= date.getCreate_data() %></p>
-<p><a href="/grad2021_groupA/Browsing">健康状態記録一覧に戻る</a></p>
+<form action="">
+<p>
+<a href=/grad2021_groupA/Browsing>一覧へ</a>
+</p>
+</form>
+<%@ include file="basefooter.jsp" %>
 
 </body>
 </html>

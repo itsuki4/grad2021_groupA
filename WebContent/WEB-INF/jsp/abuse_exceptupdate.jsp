@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="abuse_except_model.*"%>
+pageEncoding="UTF-8"
+ import="abuse_except_model.*"%>
 
 <%
 AbuseExcept abuse=(AbuseExcept)request.getAttribute("abuse");
@@ -9,12 +10,16 @@ AbuseExcept abuse=(AbuseExcept)request.getAttribute("abuse");
 <head>
 <meta charset="UTF-8"/>
 <title>面談内容の追加</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="/grad2021_groupA/css/style.css">
 </head>
 <body>
+<%@ include file="baseNavber.jsp" %>
+ <div class="container-fluid px-4">
+                        <h1 class="mt-4">虐待以外の情報</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active">虐待以外の情報</li>
+                        </ol>
+                        </div>
 <form action="/grad2021_groupA/Abuse_ExceptCreate" method="post">
 <table class="row" >
 <tr><th align="left">　　保護内容</th><td><select name="person_protect">
@@ -54,6 +59,11 @@ AbuseExcept abuse=(AbuseExcept)request.getAttribute("abuse");
 <input type="hidden" name="person_id"value="<%=abuse.getperson_id() %>" ><br>
 <button type="submit">更新</button>
 </form>
+<form action="">
 
+<a href=/grad2021_groupA/Abuse_exceptRead>一覧へ</a>
+
+</form>
+<%@ include file="basefooter.jsp" %>
 </body>
 </html>

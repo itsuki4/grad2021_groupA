@@ -10,13 +10,17 @@ Interview interview=(Interview)request.getAttribute("interview");
 <head>
 <meta charset="UTF-8"/>
 <title>詳細ページ</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="/grad2021_groupA/css/style.css">
 
 </head>
 <body>
+<%@ include file="baseNavber.jsp" %>
+ <div class="container-fluid px-4">
+                        <h1 class="mt-4">面談内容</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active">面談内容</li>
+                        </ol>
+                        </div>
 <div id="contents">
 <div class="inner">
 <div id="main">
@@ -80,5 +84,11 @@ Interview interview=(Interview)request.getAttribute("interview");
 </div>
 </div>
 </div>
+<form action="">
+<p>
+<a href=/grad2021_groupA/InterviewRead>一覧へ</a>
+</p>
+</form>
+<%@ include file="basefooter.jsp" %>
 </body>
 </html>

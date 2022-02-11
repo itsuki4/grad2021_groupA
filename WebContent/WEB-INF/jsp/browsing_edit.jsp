@@ -1,6 +1,6 @@
 
 <%@ page language="java" contentType="text/html; charset=Windows-31J"
-    pageEncoding="UTF-8" import="model.*,java.util.*" %>
+    pageEncoding="UTF-8" import="model.*"%>
 <%@page import="java.sql.*"%>
 <%
 Health_date date = (Health_date)request.getAttribute("date");
@@ -12,8 +12,14 @@ Health_date date = (Health_date)request.getAttribute("date");
 <title>健康状態記録/編集</title>
 <link rel= "stylesheet" type= "text/css" href= "/grad2021_groupA/css/style.css">
 </head>
-
 <body>
+<%@ include file="baseNavber.jsp" %>
+ <div class="container-fluid px-4">
+                        <h1 class="mt-4">健康状態記録</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active">健康状態記録</li>
+                        </ol>
+                        </div>
 <p><font size="6">健康状態記録・編集</font></p>
 <form action="/grad2021_groupA/BrowsingUpdate?id=<%= date.getPerson_id() %>" method= "post">
 
@@ -159,6 +165,11 @@ Health_date date = (Health_date)request.getAttribute("date");
 <p><input type ="hidden" name ="person_id" value="<%=date.getPerson_id() %>"></p>
 
 <input type = "submit" value ="更新">
+</form><form action="">
+<p>
+<a href=/grad2021_groupA/Browsing>一覧へ</a>
+</p>
 </form>
+<%@ include file="basefooter.jsp" %>
 </body>
 </html>

@@ -1,16 +1,22 @@
-<%@ page language="java" contentType="text/html;  charset=Windows-31J" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=Windows-31J"
+    pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8"/>
 <title>面談内容の追加</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="/grad2021_groupA/css/style.css">
 </head>
 <body>
+<%@ include file="baseNav.jsp" %>
+ <div class="container-fluid px-4">
+                        <h1 class="mt-4">面談内容の追加</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active">面談内容/面談内容の追加</li>
+                        </ol>
+                        </div>
+
 <form action="/grad2021_groupA/InterviewCreate" method="post">
 <table class="row" >
 <tr><th align="left">　　児童ID</th><td><input type="text" name="person_id" ></td></tr>
@@ -46,6 +52,11 @@
 </table>
 <button type="submit">登録</button>
 </form>
-
+<form action="">
+<p>
+<a href=/grad2021_groupA/InterviewRead>一覧へ</a>
+</p>
+</form>
+<%@ include file="basefooter.jsp" %>
 </body>
 </html>

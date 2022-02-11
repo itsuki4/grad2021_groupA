@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html;  charset=UTF-8"
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="model.*,java.util.*" %>
 <!DOCTYPE html>
 <html>
@@ -6,8 +7,15 @@
 <meta charset="UTF-8">
 <title>入所条件の検索</title>
 <link rel="stylesheet" href="/grad2021_groupA/shelter_css/css/style.css">
+<%@ include file="baseNavber.jsp" %>
 </head>
 <body>
+<div class="container-fluid px-4">
+                        <h1 class="mt-4">条件検索</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active">条件検索</li>
+                        </ol>
+                        </div>
 <div id="contents">
 <div class="inner">
 <div id="main">
@@ -29,7 +37,9 @@
 </td></tr>
 <tr><th>
 <h3>学校</h3></th>
-<td><input type="checkbox" name="vacancy" class="ibaraki" value="幼稚園"><label for="Ibaraki">幼稚園</label>
+<td>
+<input type="checkbox" name="vacancy" class="ibaraki" value="乳児"><label for="Ibaraki">乳児</label>
+<input type="checkbox" name="vacancy" class="ibaraki" value="幼稚園"><label for="Ibaraki">幼稚園</label>
 <input type="checkbox" name="vacancy" class="totigi" value="保育園"><label for="Totigi">保育園</label>
 <input type="checkbox" name="vacancy" class="gunma" value="小学生"><label for="Gunma">小学生</label>
 <input type="checkbox" name="vacancy" class="saitama" value="中学生"><label for="Saitama">中学生</label>
@@ -44,6 +54,6 @@
 </div>
 </div>
 </div>
-
+<%@ include file="basefooter.jsp" %>
 </body>
 </html>

@@ -8,8 +8,15 @@
 <meta charset="UTF-8">
 <title>変更完了</title>
 <link rel="stylesheet" href="/grad2021_groupA/shelter_css/css/style.css">
+<%@ include file="baseNavber.jsp" %>
 </head>
 <body>
+ <div class="container-fluid px-4">
+                        <h1 class="mt-4">空き情報の変更</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active">施設の情報/マイページ/空き情報の編集/空き情報の変更</li>
+                        </ol>
+                        </div>
 <table border="1" width="500px">
 
 </table>
@@ -40,5 +47,6 @@
 </div>
 </div>
 </div>
+<%@ include file="basefooter.jsp" %>
 </body>
 </html>
