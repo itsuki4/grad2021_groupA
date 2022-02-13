@@ -14,7 +14,7 @@ List<Person> List = (List<Person>) request.getAttribute("List");
 
 </head>
 <body>
-<%@ include file="baseNavber.jsp" %>
+<%@ include file="navNav.jsp" %>
  <div class="container-fluid px-4">
                         <h1 class="mt-4">児童の詳細情報</h1>
                         <ol class="breadcrumb mb-4">
@@ -39,7 +39,7 @@ List<Person> List = (List<Person>) request.getAttribute("List");
 <td><%=ps.getperson_address2()%></td>
 <td><%=ps.getperson_address3()%></td>
 <td><%=ps.getperson_address4()%></td>
-<td><a href="/grad2021_groupA/Person_Date_Main?id=<%=ps.getperson_id()%>">児童詳細</a></td>
+<td><a href="/grad2021_groupA/Person_Date_Main?id=<%=ps.getperson_id()%>">児童詳細</a>
 <td><a href="/grad2021_groupA/Person_Update?id=<%=ps.getperson_id()%>">更新</a>
 <a href="/grad2021_groupA/Person_Delete?id=<%=ps.getperson_id()%>" onclick="return confirm('id=<%=ps.getperson_id()%>を削除してよろしいですか？');">削除</a></td>
 

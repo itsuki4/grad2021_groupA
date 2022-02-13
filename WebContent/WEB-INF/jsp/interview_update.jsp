@@ -18,6 +18,7 @@ import="interview_model.*"%>
                         </div>
 <form action="/grad2021_groupA/InterviewCreate" method="post">
 <table class="row">
+<tr><th align="left">　　児童氏名</th><td><input type="text" name="person_name1" value="<%=interview.getperson_name1() %>"></td></tr>
 <tr><th align="left">　　職員ID</th><td><input type="text" name="staff_id" value="<%=interview.getstaff_id() %>"></td></tr>
 <tr><th align="left">　　職員名</th><td><input type="text" name="staff_name1"value="<%=interview.getstaff_name1() %>"></td></tr>
 <tr><th align="left">　　協力態度</th><td><select name="cooperation_attitude">

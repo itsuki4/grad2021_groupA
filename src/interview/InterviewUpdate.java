@@ -33,8 +33,7 @@ public class InterviewUpdate extends HttpServlet {
   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     //以下を追記
     request.setCharacterEncoding("UTF-8");
-    int person_id = Integer.parseInt(request.getParameter("person_id"));
-	String person_name1 = request.getParameter("person_name1");
+    String person_name1 = request.getParameter("person_name1");
 	String interview_date = request.getParameter("person_date");
 	int staff_id = Integer.parseInt(request.getParameter("staff_id"));
 	String staff_name1 = request.getParameter("staff_name1");
@@ -46,8 +45,9 @@ public class InterviewUpdate extends HttpServlet {
 	String immediate_issues = request.getParameter("immediate_issues");
 	String future_tasks = request.getParameter("future_tasks");
 	String personality_remarks = request.getParameter("personality_remarks");
+	String id=request.getParameter("id");
 
-	Interview interview=new Interview(person_id,person_name1,interview_date,staff_id,
+	Interview interview=new Interview(Integer.parseInt(id),person_name1,interview_date,staff_id,
 			staff_name1,cooperation_attitude,personality_progress,mental_progress,emotional_changes,
 			parental_opinion,immediate_issues,future_tasks,personality_remarks);
     InterviewUpdateDAO dao=new InterviewUpdateDAO();

@@ -9,13 +9,15 @@ List<Person> list=(List<Person>)request.getAttribute("list");
 <head>
 <meta charset="UTF-8"/>
 <title>児童一覧</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
+<link rel="stylesheet" type="text/css" href="/grad2021_groupA/css/style.css">
 </head>
 <body>
-<h2>児童一覧(児童相談所)</h2>
+<%@ include file="baseNavber.jsp" %>
+ <div class="container-fluid px-4">
+                        <h1 class="mt-4">児童一覧(児童相談所)</h1>
+                        <ol class="breadcrumb mb-4">
+                        </ol>
+                        </div>
 <input type="submit" onclick="location.href='/grad2021_groupA/Children_Create'" value="新規登録">
 <%if(list != null && list.size() > 0){ %>
 
@@ -39,7 +41,9 @@ List<Person> list=(List<Person>)request.getAttribute("list");
 
 
 
-
+<td><a href="/grad2021_groupA/Person_Date_Main?id=<%=p.getPerson_id()%>">児童詳細</a><br>
+<a href="/grad2021_groupA/Interview_Main?id=<%=p.getPerson_id()%>">面談内容</a><br>
+<a href="/grad2021_groupA/BrowsingDetailServlet?id=<%=p.getPerson_id()%>">健康状態</a></td>
 <td><a href="/grad2021_groupA/Children_Update?id=<%=p.getPerson_id()%>">編集</a>
 <a href="/grad2021_groupA/Children_Delete?id=<%=p.getPerson_id()%>" onclick="return confirm('児童ID=<%=p.getPerson_id()%>を削除してよろしいですか？');">削除</a></td>
 
