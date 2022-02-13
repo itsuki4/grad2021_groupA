@@ -32,6 +32,7 @@ List<Account> List = (List<Account>) request.getAttribute("List");
 <%}else if(ps.getAdmin_role() == 2){ %>
 <td>なし</td>
 <%} %>
+<td><a href="/grad2021_groupA/AccountChangeServlet?id=<%=ps.getStaff_id()%>">変更</a></td>
 </tr>
 <%} %>
 </table>
