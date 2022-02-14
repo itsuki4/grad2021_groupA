@@ -14,7 +14,7 @@ List<Person> List = (List<Person>) request.getAttribute("List");
 
 </head>
 <body>
-<%@ include file="navNav.jsp" %>
+<%@ include file="baseNavber.jsp" %>
  <div class="container-fluid px-4">
                         <h1 class="mt-4">児童の詳細情報</h1>
                         <ol class="breadcrumb mb-4">

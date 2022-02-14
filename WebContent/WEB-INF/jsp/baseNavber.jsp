@@ -33,7 +33,7 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">core</div>
-                               <a class="nav-link" href="/grad2021_groupA/Children_Read">
+                            <a class="nav-link" href="/grad2021_groupA/Person_Read">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 児童一覧
                             </a>
@@ -43,30 +43,21 @@
                                 施設検索
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="/grad2021_groupA/shelter_addServlet">都道府県検索</a>
-                                    <a class="nav-link" href="/grad2021_groupA/shelterConditionServlet">情報検索</a>
-                                </nav>
-                            <div class="collapse" id="collapseLayouts" >
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="/grad2021_groupA/shelter_addServlet">都道府県検索</a>
                                     <a class="nav-link" href="/grad2021_groupA/shelterConditionServlet">情報検索</a>
                                 </nav>
 
                             </div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="coll">
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 資料
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                <div class="sb-sidenav-collapse-arrow">><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="/grad2021_groupA/InterviewRead">面談内容</a>
-                                    <a class="nav-link" href="/grad2021_groupA/PersonRead">児相の詳細情報</a>
-                                    <a class="nav-link" href="/grad2021_groupA/Browsing">健康状態</a>
-                                    <a class="nav-link" href="/grad2021_groupA/Abuse_exceptRead">虐待以外</a>
-                                </nav>
-                            <div class="collapse" id="coll" >
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
+
                                     <a class="nav-link" href="/grad2021_groupA/InterviewRead">面談内容</a>
                                     <a class="nav-link" href="/grad2021_groupA/PersonRead">児相の詳細情報</a>
                                     <a class="nav-link" href="/grad2021_groupA/Browsing">健康状態</a>

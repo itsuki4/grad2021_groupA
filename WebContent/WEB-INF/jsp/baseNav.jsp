@@ -33,9 +33,9 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">core</div>
-                            <a class="nav-link" href="/grad2021_groupA/testB">
+                            <a class="nav-link" href="/grad2021_groupA/Person_Read">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                home
+                                児童一覧
                             </a>
                             <div class="sb-sidenav-menu-heading">Interface</div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
@@ -57,8 +57,11 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
+                                    
                                     <a class="nav-link" href="/grad2021_groupA/InterviewRead">面談内容</a>
-                                    <a class="nav-link" href="/grad2021_groupA/PersonRead">児童の詳細情報</a>
+                                    <a class="nav-link" href="/grad2021_groupA/PersonRead">児相の詳細情報</a>
+                                    <a class="nav-link" href="/grad2021_groupA/Browsing">健康状態</a>
+                                    <a class="nav-link" href="/grad2021_groupA/Abuse_exceptRead">虐待以外</a>
                                 </nav>
 
                             </div>

@@ -50,7 +50,8 @@ public class Page {
 				"                            <div class=\"collapse\" id=\"collapseLayouts\" aria-labelledby=\"headingOne\" data-bs-parent=\"#sidenavAccordion\">\r\n" +
 				"                                <nav class=\"sb-sidenav-menu-nested nav\">\r\n" +
 				"                                    <a class=\"nav-link\" href=\"/grad2021_groupA/shelter_addServlet\">都道府県検索</a>\r\n" +
-				"                                    <a class=\"nav-link\" href=\"/grad2021_groupA/shelterConditionServlet\">情報検索</a>\r\n" +
+				"                                    <a class=\"nav-link\" href=\"/grad2021_groupA/shelterConditionServlet\">情報検索</a>\r\n<a class=\"nav-link\" href=\"/grad2021_groupA/Browsing\">健康状態</a>\r\n" + 
+				"                                    <a class=\"nav-link\" href=\"/grad2021_groupA/Abuse_exceptRead\">虐待以外</a>" +
 				"                                </nav>\r\n" +
 				"        \r\n" +
 				"                            </div>\r\n" +

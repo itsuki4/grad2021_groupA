@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"
-import="model.*,java.util.*"%>
+    pageEncoding="UTF-8"%>
+<%@page import="model.*,java.util.*"%>
 <%@page import="java.sql.*"%>
 <%
 Health_date date = (Health_date)request.getAttribute("date");
