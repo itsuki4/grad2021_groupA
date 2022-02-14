@@ -34,9 +34,9 @@
 <%}else if(s.getAdmin_role() == 2){ %>
 <td>なし</td>
 <%} %>
+<td><input type="submit" value="決定" ></td>
+
 </tr>
-</table>
-<input type="submit" value="決定" >
 </form>
 </body>
 </html>

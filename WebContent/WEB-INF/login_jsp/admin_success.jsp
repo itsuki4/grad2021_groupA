@@ -33,6 +33,7 @@ List<Account> List = (List<Account>) request.getAttribute("List");
 <td>なし</td>
 <%} %>
 <td><a href="/grad2021_groupA/AccountChangeServlet?id=<%=ps.getStaff_id()%>">変更</a></td>
+<td><a href="/grad2021_groupA/AccountDeleteServlet?id=<%=ps.getStaff_id()%>" onclick="return confirm('id=<%=ps.getStaff_id()%>を削除してよろしいですか？');">削除</a></td>
 </tr>
 <%} %>
 </table>
