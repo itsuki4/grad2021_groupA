@@ -15,7 +15,7 @@
 <a href="/grad2021_groupA/shelterConditionServlet">条件検索</a>
 <a href="/grad2021_groupA/AccountRegisterJs">新規会員登録</a>
 
-<a href="/grad2021_groupA/LoginServlet">職員のログイン画面</a>
+<a href="/grad2021_groupA/">職員のログイン画面</a>
 <a href="/grad2021_groupA/AdminLoginServlet">管理者のログイン画面</a>
 
 
